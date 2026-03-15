@@ -1,0 +1,164 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9; /* fundo mais claro e suave */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cabecalho {
+  width: 100%;
+  background-color: #ff7f50; /* coral suave, acolhedor */
+  padding: 10px 20px;
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.titulo {
+  margin: 0;
+  text-align: center;
+  flex: 1;
+  font-weight: bold;
+  color: #fff;
+}
+
+.menu {
+  justify-content: center;
+  display: flex; /* corrigido: era flexbox, agora é flex */
+  background-color: #4b4b4b; /* cinza escuro */
+  color: #ffdd59; /* amarelo suave para contraste */
+  font-family: "Trebuchet MS";
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.menu:hover {
+  background-color: #ff7f50; /* efeito hover */
+  color: #fff;
+}
+
+.adopt-description {
+  background-color: #ffffff; /* branco limpo para destaque do texto */
+  margin: 40px auto;
+  max-width: 80%;
+  display: flex;
+  border-radius: 10px;
+  border: 2px solid #ff7f50; /* destaque coral */
+  flex-direction: column;
+  justify-content: center;
+  font-size: 15px;
+  gap: 16px;
+  padding: 15px;
+}
+
+.adopt-description p {
+  color: #333333; /* texto mais escuro para leitura */
+  font-weight: bold;
+  margin-right: 5px;
+  padding: 5px 10px;
+}
+
+img {
+  width: 80px;
+  height: auto;
+}
+
+h1 {
+  text-align: center;
+  font-family: Castellar;
+  color: #ff7f50; /* título com cor coral */
+}
+
+p {
+  font-family: "Trebuchet MS";
+  color: #555555; /* texto mais suave que o preto */
+}
+
+footer {
+  display: flex;
+  margin-top: auto;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 15px 0;
+  background-color: #4b4b4b;
+  color: #ffdd59;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+
+.gato-card {
+  width: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.img-container {
+  position: relative;
+}
+
+.gato-card img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.texto-sobreposto {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+
+.descricao-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(103, 1, 100, 0.6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 3;
+}
+
+.gato-card:hover img {
+  opacity: 10;
+}
+
+.gato-card:hover .descricao-overlay {
+  opacity: 1;
+}
