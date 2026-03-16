@@ -19,8 +19,7 @@ body {
 }
 
 .cabecalho {
-  width: 100%;
-  background-color: #ff7f50; /* coral suave, acolhedor */
+  background-color: #ff7f50;
   padding: 10px 20px;
   color: #fff;
 }
@@ -29,12 +28,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .titulo {
   margin: 0;
+  right: 50%;
+  left: 50%;
   text-align: center;
-  flex: 1;
   font-weight: bold;
   color: #fff;
 }
@@ -74,11 +75,6 @@ body {
   font-weight: bold;
   margin-right: 5px;
   padding: 5px 10px;
-}
-
-img {
-  width: 80px;
-  height: auto;
 }
 
 h1 {
@@ -161,4 +157,83 @@ footer {
 
 .gato-card:hover .descricao-overlay {
   opacity: 1;
+}
+
+
+.gato-inicio img{
+  width: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.gato-final{
+  background-color: white;
+  padding: 8px;
+
+  border-radius: 20px;
+  border: 2px solid black;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  text-decoration: none;
+  color: black;
+}
+
+.gato-final img{
+ width: 80px;
+}
+
+.menu-nav {
+  margin-top: 10px;
+}
+
+.menu-nav ul{
+  list-style: none;
+}
+
+.menu-nav > ul{
+  display: flex;
+  background: black;
+  justify-content: space-between;
+}
+
+.menu-nav a{
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  font-family: Bungee;
+  font-size: 20px;
+}
+
+.submenu{
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.menu-nav li:hover .submenu{
+  display: block;
+}
+
+.menu-nav li{
+  position: relative;
+  background: black;
+}
+
+.menu {
+  justify-content: center;
+  display: flex;
+  background-color: black;
+  color: white;
+  font-family: "Trebuchet MS";
+  cursor: pointer;
+}
+
+.status-login {
+  font-family: "Bungee";
+  font-weight: bold;
 }
