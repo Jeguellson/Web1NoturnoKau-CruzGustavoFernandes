@@ -12,13 +12,26 @@
   <header>
   <h1> Tela de adm para adicionar gatos novos</h1>
   </header>
-    <form class="principal" style="display: flex-box; align-items: center; flex-direction: column">
+    <form class="principal" style="display: flex; align-items: center; flex-direction: column; gap: 10px; border: solid black; margin: auto ; max-width: 40%; padding: 20px;">
       <label>Adicionar nome do gato:</label>
       <input type="text" name="nome" id="nome_gato">
+
       <label>Adicionar descrição do gato:</label>
       <input type="text" name="descricao" id="descricao_gato">
+
       <label for="file-upload">Selecionar Arquivo:</label>
       <input type="file" id="file-upload" name="arquivo">
+
+      <input type="radio" name="sexo" value="M" id="sexo_m">
+      <label for="sexo_m">Masculino</label>
+
+      <input type="radio" name="sexo" value="F" id="sexo_f">
+      <label for="sexo_f">Feminino</label>
+
+
+      <input type="submit" onclick="cadastrar_Gato()">
     </form>
+
+    <script src="/js/addCat.js"></script>
   </body>
 </html>
