@@ -1,18 +1,46 @@
-let gatos = [];
+let gatos = JSON.parse(localStorage.getItem("gatos")) || [];
 
-function cadastrar_Gato(){
-  let gato = {
-    nome: document.getElementById("nome_gato").value,
-    descricao: document.getElementById("descricao_gato").value,
-    imagem: document.getElementById("file-upload").value,
-    sexo: document.querySelector('input[name="sexo"]:checked').value
+function cadastrar_Gato(event) {
+  event.preventDefault();
+
+  const nome = document.getElementById("nome_gato").value;
+  const descricao = document.getElementById("descricao_gato").value;
+  const sexoSelecionado = document.querySelector('input[name="sexo"]:checked');
+
+  if (!sexoSelecionado) {
+    alert("Selecione o sexo do gato!");
+    return;
   }
 
-  gatos.push(gato)
-  localStorage.setItem("gatos", JSON.stringify(gatos));
+  const fileInput = document.getElementById("file-upload");
+  const file = fileInput.files[0];
 
-  let elemento = document.getElementsByClassName("lista-gatos")
+  if (!file) {
+    alert("Selecione uma imagem!");
+    return;
+  }
 
-  let card = document.createElement("div");
+  const reader = new FileReader();
 
+  reader.onload = function () {
+    let gato = {
+      nome: nome,
+      descricao: descricao,
+      sexo: sexoSelecionado.value,
+      imagem: reader.result //  base64
+    };
+
+    gatos.push(gato);
+    localStorage.setItem("gatos", JSON.stringify(gatos));
+
+    alert("Gato cadastrado com sucesso!");
+
+
+  
+  };
+
+  reader.readAsDataURL(file);
 }
+
+
+document.getElementById("formGato").addEventListener("submit", cadastrar_Gato);

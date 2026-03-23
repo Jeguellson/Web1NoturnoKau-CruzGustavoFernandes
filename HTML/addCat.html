@@ -1,37 +1,42 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/css/addCatStyle.css" />
-  </head>
-  <body>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Adicionar Gato</title>
+  <link rel="stylesheet" href="/css/addCatStyle.css" />
+</head>
+
+<body>
   <header>
-  <h1> Tela de adm para adicionar gatos novos</h1>
+    <h1>Tela de adm para adicionar gatos novos</h1>
   </header>
-    <form class="principal" style="display: flex; align-items: center; flex-direction: column; gap: 10px; border: solid black; margin: auto ; max-width: 40%; padding: 20px;">
-      <label>Adicionar nome do gato:</label>
-      <input type="text" name="nome" id="nome_gato">
 
-      <label>Adicionar descrição do gato:</label>
-      <input type="text" name="descricao" id="descricao_gato">
+  <form id="formGato"
+    style="display: flex; flex-direction: column; gap: 10px; border: solid black; margin: auto; max-width: 40%; padding: 20px;">
 
-      <label for="file-upload">Selecionar Arquivo:</label>
-      <input type="file" id="file-upload" name="arquivo">
+    <label for="nome_gato">Nome do gato:</label>
+    <input type="text" id="nome_gato" required>
 
-      <input type="radio" name="sexo" value="M" id="sexo_m">
+    <label for="descricao_gato">Descrição:</label>
+    <input type="text" id="descricao_gato" required>
+
+    <label for="file-upload">Imagem:</label>
+    <input type="file" id="file-upload" accept="image/*" required>
+
+    <p>Sexo:</p>
+    <div>
+      <input type="radio" name="sexo" value="M" id="sexo_m" required>
       <label for="sexo_m">Masculino</label>
 
-      <input type="radio" name="sexo" value="F" id="sexo_f">
+      <input type="radio" name="sexo" value="F" id="sexo_f" required>
       <label for="sexo_f">Feminino</label>
+    </div>
 
+    <button type="submit">Cadastrar</button>
+  </form>
 
-      <input type="submit" onclick="cadastrar_Gato()">
-    </form>
+  <script src="/js/addCat.js"></script>
+</body>
 
-    <script src="/js/addCat.js"></script>
-  </body>
 </html>

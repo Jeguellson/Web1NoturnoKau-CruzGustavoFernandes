@@ -1,4 +1,8 @@
+document.addEventListener("DOMContentLoaded", function() {
+
+
 let gatosSalvos = JSON.parse(localStorage.getItem("gatos")) || [];
+
 
 gatosSalvos.forEach(gato => {
   let card = document.createElement("div");
@@ -12,4 +16,7 @@ gatosSalvos.forEach(gato => {
     </div>
   `;
   document.getElementById("lista-gatos").appendChild(card);
+});
+
+
 });
