@@ -1,12 +1,19 @@
-document.addEventListener("DOMContentLoaded", function() {
+if (sessionStorage.getItem("status") === "true") {
+  document.querySelector(".status-login").textContent = "Logado"
+  document.querySelector(".pata").src = "/img/iconePataVerde.png"
+
+  
+}
+
+document.addEventListener("DOMContentLoaded", function () {
 
 
-let gatosSalvos = JSON.parse(localStorage.getItem("gatos")) || [];
+  let gatosSalvos = JSON.parse(localStorage.getItem("gatos")) || [];
 
 
-gatosSalvos.forEach(gato => {
-  let card = document.createElement("div");
-  card.innerHTML = `
+  gatosSalvos.forEach(gato => {
+    let card = document.createElement("div");
+    card.innerHTML = `
     <div class="gato-card">
       <div class="img-container">
         <img src="${gato.imagem}" alt="gato">
@@ -15,8 +22,8 @@ gatosSalvos.forEach(gato => {
       </div>
     </div>
   `;
-  document.getElementById("lista-gatos").appendChild(card);
-});
+    document.getElementById("lista-gatos").appendChild(card);
+  });
 
 
 });
