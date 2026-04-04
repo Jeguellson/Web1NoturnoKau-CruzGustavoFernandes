@@ -1,5 +1,3 @@
-
-
 //TODO: salvar cookies localmente e utilizar sessionStorage para ficar status logado
 
 const inputEmail = document.getElementById('inputEmail');
@@ -17,16 +15,10 @@ document.addEventListener('keydown', function (event) {
         const valorSenha = inputSenha.value;
         const valorEmail = inputEmail.value;
 
-
-
         cadastrar(valorEmail, valorSenha)
     }
     if (event.code === 'Backspace') {
-
-
-
         sair()
-
     }
 });
 
@@ -48,6 +40,6 @@ function cadastrar(email, senha) {
     document.getElementById('testDebug').textContent = "Usuario: " + email + " Senha: " + senha;
     cookies();
     salvarDados();
-    
+
     window.location.href = "TelaPrincipal.html";
 }

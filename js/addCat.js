@@ -12,14 +12,6 @@ function cadastrar_Gato(event) {
     return;
   }
 
-  const fileInput = document.getElementById("file-upload");
-  const file = fileInput.files[0];
-
-  if (!file) {
-    alert("Selecione uma imagem!");
-    return;
-  }
-
   const reader = new FileReader();
 
   reader.onload = function () {
@@ -35,8 +27,6 @@ function cadastrar_Gato(event) {
 
     alert("Gato cadastrado com sucesso!");
 
-
-  
   };
 
   reader.readAsDataURL(file);
