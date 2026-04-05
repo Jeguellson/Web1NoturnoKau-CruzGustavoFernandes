@@ -85,7 +85,7 @@ h1 {
 h2 {
   font-family: Bungee;
   color: black;
-  margin-left: 20px;
+  margin-left: 18px;
   padding-bottom: 30px;
   padding-top: 15px;
 }
@@ -155,6 +155,10 @@ footer {
   text-decoration: none;
   font-family: Bungee;
   font-size: 20px;
+}
+
+input::placeholder {
+  font-style: italic;
 }
 
 .submenu {
@@ -246,12 +250,12 @@ footer {
 
 #tabela-gatos td {
   padding: 8px;
-  border-bottom: 1px solid black; /* linha separando as linhas */
+  border-bottom: 1px solid black;
   font-family: Ebrima;
 }
 
 #tabela-gatos tr:hover {
-  background-color: #f0f0f0; /* destaca a linha ao passar o mouse */
+  background-color: #f0f0f0;
 }
 
 .btn-alterar {
@@ -270,4 +274,52 @@ footer {
   width: 100px;
   padding: 5px;
   font-family: Bungee;
+}
+
+#tituloLogin {
+  color: white;
+  font-family: Bungee;
+  padding-bottom: 15px;
+  padding-top: 30px;
+  background-color: black;
+}
+
+.cabecalhoLogin {
+  padding: 30px;
+  background-color: coral;
+}
+
+.login-nav {
+  background-color: black;
+}
+
+.login-nav h2 {
+  color: white;
+  font-family: Bungee;
+  text-align: center;
+}
+
+.loginInfo {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+#statusLabel, #statusIcon {
+  font-family: Bungee;
+  height: 20px;
+}
+
+#inputEmail, #inputSenha, #login {
+  width: 300px;
+  height: 30px;
+}
+
+.status-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
 }

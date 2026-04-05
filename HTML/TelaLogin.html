@@ -1,18 +1,44 @@
 <!DOCTYPE html>
-<!--TODO: checkbox de continual logado-->>
+<!--TODO: checkbox de continual logado-->
 <html>
 
 <head>
+  <meta charset="UTF-8">
+  <title>Faça Login em Sua Conta</title>
+  <link rel="stylesheet" href="/css/principal.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <input id="statusIcon" type="checkbox" disabled></Label>
-    <Label id="statusLabel">Inativo</Label> <br>
 
-    <input type="text" id="inputEmail"> <br>
-    <input type="text" id="inputSenha"> <br>
+<header class="cabecalhoLogin">
 
-    <Label id="testDebug">Teste Debug</Label>
+  <h1 id="tituloLogin">Utilize sua conta de apoiador!</h1>
+
+  <nav class="login-nav">
+    <h2>Seja um pata-amiga!</h2>
+  </nav>
+
+</header>
+
+<div class="loginInfo">
+
+    <div class="status-box">
+      <input id="statusIcon" type="checkbox" disabled>
+      <label id="statusLabel">Inativo</label>
+    </div>
+
+    <input type="text" id="inputEmail" placeholder="E-mail">
+    <input type="text" id="inputSenha" placeholder="Senha">
+
+    <input id="login" type="submit">
+
+</div>
+
+<footer>
+  Copyright de Adopt Cat - Fundação sem Fins Lucrativos
+</footer>
+
     <script src="/js/backend_cadastro.js" async defer></script>
 </body>
 

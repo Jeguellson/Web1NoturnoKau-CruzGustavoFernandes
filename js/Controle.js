@@ -81,6 +81,17 @@ function cadastrar_Gato(event) {
   const idade = document.getElementById("idadeGato").value;
   const observacao = document.getElementById("observacao").value;
 
+
+    if (nome === "") {
+      alert("Insira o nome do gato!")
+      return;
+    }
+
+    if (descricao === "") {
+      alert("Insira a descrição do gato!")
+      return;
+    }
+
     if (!sexoSelecionado) {
       alert("Selecione o sexo do gato!");
       return;
@@ -98,7 +109,7 @@ function cadastrar_Gato(event) {
       gatos.push(gato);
 
     } else {
-      
+
       gatos[indiceEditando] = gato;
       indiceEditando = -1;
     }
