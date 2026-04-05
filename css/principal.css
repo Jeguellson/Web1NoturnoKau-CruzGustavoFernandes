@@ -1,5 +1,3 @@
-html,
-
 body {
   height: 100%;
   margin: 0;
@@ -111,65 +109,6 @@ footer {
   text-align: center;
 }
 
-.gato-card {
-  flex: 0 1 150px;
-  max-width: 150px;
-  border-radius: 8px;
-  overflow: hidden;
-  cursor: pointer;
-  position: relative;
-  background-color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.img-container {
-  position: relative;
-}
-
-.gato-card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  display: block;
-  border-radius: 8px 8px 0 0;
-}
-
-.texto-sobreposto {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  color: white;
-  font-weight: bold;
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
-  z-index: 2;
-}
-
-.descricao-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(103, 1, 100, 0.6);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 10px;
-
-  opacity: 0;
-  transition: 0.3s;
-  z-index: 3;
-}
-
-.gato-card:hover img {
-  opacity: 0.5;
-}
-
-.gato-card:hover .descricao-overlay {
-  opacity: 1;
-}
 
 .gato-inicio img {
   width: 120px;
@@ -291,4 +230,44 @@ footer {
   align-content: center;
   gap: 10px;
   padding-bottom: 10px;
+}
+
+#tabela-gatos {
+  width: 100%;
+  border: black;
+}
+
+#tabela-gatos th {
+  background-color: black;
+  font-family: Calibri;
+  color: white;
+  padding: 10px;
+}
+
+#tabela-gatos td {
+  padding: 8px;
+  border-bottom: 1px solid black; /* linha separando as linhas */
+  font-family: Ebrima;
+}
+
+#tabela-gatos tr:hover {
+  background-color: #f0f0f0; /* destaca a linha ao passar o mouse */
+}
+
+.btn-alterar {
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  font-family: Bungee;
+  width: 100px;
+  padding: 5px;
+}
+
+.btn-excluir {
+  background-color: red;
+  color: white;
+  border-radius: 4px;
+  width: 100px;
+  padding: 5px;
+  font-family: Bungee;
 }

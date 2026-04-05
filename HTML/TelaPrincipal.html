@@ -10,7 +10,7 @@
   <body>
     <header class="cabecalho">
       <nav class="navbar">
-        <a href="#" class="gato-inicio">
+        <a href="#" class="gato-inicio" onclick="window.location.reload()">
           <img
             src="https://cdn-icons-png.flaticon.com/512/8463/8463545.png "
             alt="Gato início"
@@ -28,7 +28,6 @@
         </a>
       </nav>
       <nav class="menu-nav">
-
         <ul>
           <li>
             <a href="#adocao">Adoção</a>
@@ -178,20 +177,34 @@
       <label for="sexo_f">Feminino</label>
       </div>
 
-      <label for="observacao">Observação:</label>
-      <textarea id="observacao" required></textarea>
+        <label for="observacao">Observação:</label>
+        <textarea type="text" id="observacao"></textarea>
 
       <button type="submit">Cadastrar</button>
+      <button type="reset">Cancelar Ação</button>
+
     </form>
       </div>
     </div>
 
-    <script src="/js/addCat.js"></script>
-    <section id="lista-gatos"></section>
+    <section id="lista-gatos">
+      <table id="tabela-gatos">
+      <tr>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Sexo</th>
+        <th>Idade</th>
+        <th>Observação</th>
+        <th>Ações</th>
+      </tr>
+        <tr>
+        </tr>
+      </table>
+    </section>
 
     <footer id="cabeçalho">
       Estudantes: Kauã Felipe da Cruz - Gustavo Alexandre Fernades - Pedro Henrique Leite da Costa
     </footer>
-      <script src="/js/adicionandoHtmlGato.js"></script>
+      <script src="/js/Controle.js"></script>
   </body>
 </html>
