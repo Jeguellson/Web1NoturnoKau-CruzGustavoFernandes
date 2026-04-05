@@ -18,11 +18,10 @@
           />
         </a>
         <h1 class="titulo">Adopt Cat - Salvando Vidas</h1>
-        <a href="/HTML/TelaLogin.html" class="gato-final">
-          <img
+        <a href="TelaLogin.html" class="gato-final">
+          <img id="pata"
             src="https://cdn-icons-png.flaticon.com/512/4225/4225935.png "
             alt="Gato fim"
-            class="pata"
           />
           <span class="status-login" id="status-value">Deslogado</span>
         </a>
@@ -190,7 +189,7 @@
       <input type="text" id="descricao_gato" required>
 
       <label for="idadeGato">Idade:</label>
-      <input type="text" id="idadeGato" required>
+      <input type="number" id="idadeGato" required>
 
       <p style="color: black; font-family: Bungee;">Sexo:</p>
 
@@ -207,6 +206,8 @@
 
       <button type="submit">Cadastrar</button>
       <button type="reset">Cancelar Ação</button>
+
+      <button type="button" id="listar">Listar Todos</button>
 
     </form>
       </div>
@@ -231,5 +232,6 @@
       Estudantes: Kauã Felipe da Cruz - Gustavo Alexandre Fernades - Pedro Henrique Leite da Costa
     </footer>
       <script src="/js/Controle.js"></script>
+      <script src="../js/backend_cadastro.js"></script>
   </body>
 </html>

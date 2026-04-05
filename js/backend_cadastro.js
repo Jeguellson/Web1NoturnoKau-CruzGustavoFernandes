@@ -1,45 +1,70 @@
-//TODO: salvar cookies localmente e utilizar sessionStorage para ficar status logado
+document.addEventListener("DOMContentLoaded", function () {
 
-const inputEmail = document.getElementById('inputEmail');
-const inputSenha = document.getElementById('inputSenha');
-const labelTestes = document.getElementById('testDebug');
 
-if (sessionStorage.getItem("status") === "true") {
-    document.getElementById("statusLabel").textContent = "Ativo"
-    document.getElementById("statusIcon").checked = true;
-}
+  if (document.getElementById("lembrarMe")) {
+    if (localStorage.getItem("lembrarMe") === "true") {
+      document.getElementById("lembrarMe").checked = true;
+    }
+  }
 
-document.addEventListener('keydown', function (event) {
+  if (sessionStorage.getItem("status") === "true") {
+    const nome = sessionStorage.getItem("usuario");
+
+    if (document.getElementById("statusLabel"))
+      document.getElementById("statusLabel").textContent = "Ativo";
+    if (document.getElementById("statusIcon"))
+      document.getElementById("statusIcon").checked = true;
+    if (document.getElementById("status-value"))
+      document.getElementById("status-value").textContent = nome;
+    if (document.getElementById("pata"))
+      document.getElementById("pata").src = "../img/iconePataVerde.png";
+  }
+
+  document.addEventListener('keydown', function (event) {
+    const inputNome = document.getElementById('inputNome');
+    const inputSenha = document.getElementById('inputSenha');
+
+    if (!inputNome || !inputSenha) return;
 
     if (event.key === 'Enter') {
-        const valorSenha = inputSenha.value;
-        const valorEmail = inputEmail.value;
-
-        cadastrar(valorEmail, valorSenha)
+      cadastrar(inputNome.value, inputSenha.value);
     }
     if (event.code === 'Backspace') {
-        sair()
+      sair();
     }
+  });
 });
 
-function salvarDados() {
-    sessionStorage.setItem('status', true);
+function salvarDados(nome) {
+  sessionStorage.setItem('status', 'true');
+  sessionStorage.setItem('usuario', nome);
 }
+
 function cookies() {
-    document.cookie = "nome=valor; max-age=60; path=/"
+  document.cookie = "logado=true; max-age=3600; path=/";
 }
 
 function sair() {
-    sessionStorage.clear();
-    document.cookie.split(";").forEach(function (c) {
-        document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
-    });
+  sessionStorage.clear();
+  document.cookie.split(";").forEach(function (c) {
+    document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+  });
 }
 
-function cadastrar(email, senha) {
-    document.getElementById('testDebug').textContent = "Usuario: " + email + " Senha: " + senha;
-    cookies();
-    salvarDados();
+function cadastrar(nome, senha) {
+  if (nome === "" || senha === "") {
+    alert("Preencha os campos meu rei!");
+    return;
+  }
 
-    window.location.href = "TelaPrincipal.html";
+  if (document.getElementById("lembrarMe").checked) {
+    localStorage.setItem("lembrarMe", "true");
+  } else {
+    localStorage.removeItem("lembrarMe");
+  }
+
+  cookies();
+  salvarDados(nome);
+  alert("Você logou com sucesso!");
+  window.location.href = "TelaPrincipal.html";
 }

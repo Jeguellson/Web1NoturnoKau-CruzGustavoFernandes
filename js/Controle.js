@@ -1,8 +1,3 @@
-if (sessionStorage.getItem("status") === "true") {
-  document.querySelector(".status-login").textContent = "Logado"
-  document.querySelector(".pata").src = "/img/iconePataVerde.png"
-}
-
 let gatos = JSON.parse(localStorage.getItem("gatos")) || [];
 
 let indiceEditando = -1;
@@ -125,4 +120,21 @@ function cadastrar_Gato(event) {
 
   document.querySelector(".formGato").addEventListener("submit", cadastrar_Gato);
 
+  document.addEventListener("DOMContentLoaded", function () {
+    const listar = document.getElementById("listar");
 
+    listar.addEventListener("click", function () {
+      renderizarTabela();
+    });
+});
+
+  document.addEventListener("DOMContentLoaded", function () {
+
+
+    if (sessionStorage.getItem("status") === "true") {
+      const nome = sessionStorage.getItem("usuario");
+      document.getElementById("status-value").textContent = "Logado";
+      document.getElementById("pata").src = "https://cdn-icons-png.flaticon.com/512/190/190411.png"; // patinha verde temporária
+    }
+
+  });

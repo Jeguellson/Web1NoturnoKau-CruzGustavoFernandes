@@ -312,7 +312,7 @@ input::placeholder {
   height: 20px;
 }
 
-#inputEmail, #inputSenha, #login {
+#inputNome, #inputSenha, #login {
   width: 300px;
   height: 30px;
 }
@@ -322,4 +322,10 @@ input::placeholder {
   flex-direction: row;
   align-items: center;
   gap: 5px;
+}
+
+.opcoes {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
