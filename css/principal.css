@@ -142,7 +142,7 @@ footer {
   list-style: none;
 }
 
-.menu-nav > ul {
+.menu-nav>ul {
   display: flex;
   background: black;
   justify-content: space-between;
@@ -287,6 +287,7 @@ input::placeholder {
 .cabecalhoLogin {
   padding: 30px;
   background-color: coral;
+  margin-bottom: 10%;
 }
 
 .login-nav {
@@ -299,23 +300,13 @@ input::placeholder {
   text-align: center;
 }
 
-.loginInfo {
-  padding-top: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
 
-#statusLabel, #statusIcon {
+#statusLabel,
+#statusIcon {
   font-family: Bungee;
   height: 20px;
 }
 
-#inputNome, #inputSenha, #login {
-  width: 300px;
-  height: 30px;
-}
 
 .status-box {
   display: flex;
@@ -324,8 +315,124 @@ input::placeholder {
   gap: 5px;
 }
 
+
+
+
+
+
+.loginInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+#inputNome,
+#inputSenha,
+#login {
+  width: 300px;
+  height: 30px;
+}
+
+
+
 .opcoes {
   display: flex;
   flex-direction: row;
   gap: 10px;
+}
+
+.corpoCadastro {
+  background-color: coral;
+  position: relative;
+  width: 400px;
+  min-height: 150px;
+  z-index: 1;
+  border-radius: 35px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
+  padding: 20PX;
+  box-sizing: border-box;
+}
+
+.catbox {
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.cat-face {
+  background-color: #000000;
+  color: white;
+  width: 100%;
+  height: 100%;
+  min-height: 120px;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.orelha-direita {
+
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-color: coral;
+  border-radius: 90% 35% 90% 5%;
+
+  transform: rotate(-185deg);
+
+  top: -18px;
+  right: -18px;
+  z-index: -1;
+
+}
+
+.orelha-esquerda {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-color: coral;
+
+  border-radius: 90% 35% 90% 5%;
+
+  transform: rotate(92.5deg);
+
+
+  top: -15px;
+  left: -18px;
+  z-index: -1;
+}
+
+
+.bg-patinhas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.15;
+  background-image:
+    url('../img/patinhas-background.png'),
+    url('../img/patinhas-background.png');
+  background-position: -1 1, 30px 30px;
+
+  background-size: 160px 160px;
+
+  background-repeat: repeat;
+  background-color: white;
 }

@@ -5,46 +5,63 @@
 <head>
   <meta charset="UTF-8">
   <title>Faça Login em Sua Conta</title>
-  <link rel="stylesheet" href="/css/principal.css"/>
+  <link rel="stylesheet" href="/css/principal.css" />
   <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="body-cadastro">
 
-<header class="cabecalhoLogin">
+  <header class="cabecalhoLogin">
 
-  <h1 id="tituloLogin">Utilize sua conta de apoiador!</h1>
 
-  <nav class="login-nav">
-    <h2>Seja um pata-amiga!</h2>
-  </nav>
+    <h1 id="tituloLogin">Utilize sua conta de apoiador!</h1>
 
-</header>
+    <nav class="login-nav">
+      <h2>Seja um pata-amiga!</h2>
+    </nav>
 
-<div class="loginInfo">
+  </header>
+  <div class="corpoCadastro">
 
-    <div class="status-box">
-      <input id="statusIcon" type="checkbox" disabled>
-      <label id="statusLabel">Inativo</label>
+    <div class="orelha-direita"></div>
+    <div class="orelha-esquerda"></div>
+    <div class="catbox">
+
+      <div class="cat-face">
+        <div class="loginInfo">
+
+          <div class="status-box">
+            <input id="statusIcon" type="checkbox" disabled>
+            <label id="statusLabel">Inativo</label>
+          </div>
+
+          <input type="text" id="inputNome" placeholder="Nome">
+          <input type="text" id="inputSenha" placeholder="Senha">
+
+          <div class="opcao">
+            <input type="checkbox" id="lembrarMe">
+            <label for="lembrarMe">Lembrar-me</label>
+          </div>
+
+          <input id="login" type="button" value="Enviar"
+            onclick="cadastrar(document.getElementById('inputNome').value, document.getElementById('inputSenha').value)">
+
+        </div>
+
+      </div>
+
     </div>
 
-    <input type="text" id="inputNome" placeholder="Nome">
-    <input type="text" id="inputSenha" placeholder="Senha">
-
-  <div class="opcao">
-    <input type="checkbox" id="lembrarMe">
-    <label for="lembrarMe">Lembrar-me</label>
   </div>
 
-  <input id="login" type="button" value="Enviar" onclick="cadastrar(document.getElementById('inputNome').value, document.getElementById('inputSenha').value)">
+  
 
-</div>
+<div class="bg-patinhas"></div>
+  <footer>
+    Copyright de Adopt Cat - Fundação sem Fins Lucrativos
+  </footer>
 
-<footer>
-  Copyright de Adopt Cat - Fundação sem Fins Lucrativos
-</footer>
-
-    <script src="../js/backend_cadastro.js"></script>
+  <script src="../js/backend_cadastro.js"></script>
 </body>
 
 </html>
