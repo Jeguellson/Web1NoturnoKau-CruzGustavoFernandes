@@ -68,3 +68,5 @@ function cadastrar(nome, senha) {
   alert("Você logou com sucesso!");
   window.location.href = "TelaPrincipal.html";
 }
+
+

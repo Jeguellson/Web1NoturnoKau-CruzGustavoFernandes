@@ -1,11 +1,8 @@
 body {
-  height: 100%;
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
-}
 
-body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -16,6 +13,7 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
 
 .cabecalho {
   background-color: #ff7f50;
@@ -31,23 +29,23 @@ body {
 }
 
 .titulo {
-  margin: 0;
-  right: 50%;
-  left: 50%;
   text-align: center;
   color: white;
   font-family: "Bungee";
 }
 
+
 .menu {
-  justify-content: center;
   display: flex;
-  background-color: #4b4b4b;
-  color: #ffdd59;
+  justify-content: center;
   font-family: "Trebuchet MS";
   cursor: pointer;
+
   padding: 8px 15px;
   border-radius: 5px;
+
+  background-color: black;
+  color: white;
 }
 
 .menu:hover {
@@ -55,15 +53,18 @@ body {
   color: #fff;
 }
 
+
 .adopt-description {
   background-color: #ffffff;
   margin: 40px auto;
   max-width: 80%;
   display: flex;
-  border-radius: 10px;
-  border: 2px solid #ff7f50;
   flex-direction: column;
   justify-content: center;
+
+  border-radius: 10px;
+  border: 2px solid #ff7f50;
+
   font-size: 15px;
   gap: 16px;
   padding: 15px;
@@ -76,6 +77,7 @@ body {
   padding: 5px 10px;
 }
 
+
 h1 {
   text-align: center;
   font-family: Castellar;
@@ -86,8 +88,7 @@ h2 {
   font-family: Bungee;
   color: black;
   margin-left: 18px;
-  padding-bottom: 30px;
-  padding-top: 15px;
+  padding: 15px 0 30px;
 }
 
 p {
@@ -95,15 +96,19 @@ p {
   color: #555555;
 }
 
+
 footer {
   display: flex;
   margin-top: auto;
   justify-content: center;
   align-items: center;
+
   width: 100%;
   padding: 15px 0;
+
   background-color: black;
   color: white;
+
   font-family: Bungee;
   font-size: 14px;
   text-align: center;
@@ -112,8 +117,6 @@ footer {
 
 .gato-inicio img {
   width: 120px;
-  display: flex;
-  align-items: center;
 }
 
 .gato-final {
@@ -134,6 +137,7 @@ footer {
   width: 80px;
 }
 
+
 .menu-nav {
   margin-top: 10px;
 }
@@ -142,24 +146,28 @@ footer {
   list-style: none;
 }
 
-.menu-nav>ul {
+.menu-nav > ul {
   display: flex;
   background: black;
   justify-content: space-between;
 }
 
+.menu-nav li {
+  position: relative;
+  background: black;
+}
+
 .menu-nav a {
   display: block;
   padding: 10px 20px;
+
   color: white;
   text-decoration: none;
+
   font-family: Bungee;
   font-size: 20px;
 }
 
-input::placeholder {
-  font-style: italic;
-}
 
 .submenu {
   display: none;
@@ -172,38 +180,44 @@ input::placeholder {
   display: block;
 }
 
-.menu-nav li {
-  position: relative;
-  background: black;
+
+input::placeholder {
+  font-style: italic;
 }
 
-.menu {
-  justify-content: center;
-  display: flex;
-  background-color: black;
-  color: white;
-  font-family: "Trebuchet MS";
-  cursor: pointer;
-}
 
 .status-login {
   font-family: "Bungee";
   font-weight: bold;
 }
 
+.status-box {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#statusLabel,
+#statusIcon {
+  font-family: Bungee;
+  height: 20px;
+}
+
+
 #lista-gatos {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+
   padding: 10px;
-  background-color: rgba(255, 165, 0, 0.2);
-  height: auto;
-  max-width: 100%;
-  box-sizing: border-box;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
   margin: 5%;
+
+  background-color: rgba(255, 165, 0, 0.2);
+
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+
 
 .crudl {
   background-color: #DCD6D0;
@@ -212,39 +226,37 @@ input::placeholder {
   justify-content: center;
 }
 
-.addGatos {
-  display: flex;
-  flex-direction: column;
-}
-
 .formGato {
   display: flex;
   flex-direction: column;
   gap: 7px;
-  border: solid black;
+
   width: 280px;
   padding: 20px;
+
+  border: solid black;
+  background-color: white;
+
   font-family: Bungee;
   font-size: small;
-  background-color: white;
 }
 
 .sexo {
   display: flex;
-  align-content: center;
   gap: 10px;
   padding-bottom: 10px;
 }
 
+
 #tabela-gatos {
   width: 100%;
-  border: black;
 }
 
 #tabela-gatos th {
   background-color: black;
-  font-family: Calibri;
   color: white;
+
+  font-family: Calibri;
   padding: 10px;
 }
 
@@ -258,29 +270,35 @@ input::placeholder {
   background-color: #f0f0f0;
 }
 
+
 .btn-alterar {
   background-color: green;
   color: white;
   border-radius: 5px;
-  font-family: Bungee;
+
   width: 100px;
   padding: 5px;
+
+  font-family: Bungee;
 }
 
 .btn-excluir {
   background-color: red;
   color: white;
   border-radius: 4px;
+
   width: 100px;
   padding: 5px;
+
   font-family: Bungee;
 }
+
 
 #tituloLogin {
   color: white;
   font-family: Bungee;
-  padding-bottom: 15px;
-  padding-top: 30px;
+
+  padding: 30px 0 15px;
   background-color: black;
 }
 
@@ -300,32 +318,11 @@ input::placeholder {
   text-align: center;
 }
 
-
-#statusLabel,
-#statusIcon {
-  font-family: Bungee;
-  height: 20px;
-}
-
-
-.status-box {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 5px;
-}
-
-
-
-
-
-
 .loginInfo {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 
 #inputNome,
 #inputSenha,
@@ -334,33 +331,30 @@ input::placeholder {
   height: 30px;
 }
 
-
-
 .opcoes {
   display: flex;
-  flex-direction: row;
   gap: 10px;
 }
+
 
 .corpoCadastro {
   background-color: coral;
   position: relative;
+
   width: 400px;
   min-height: 150px;
-  z-index: 1;
+
   border-radius: 35px;
+  margin: 0 auto;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
 
-  padding: 20PX;
-  box-sizing: border-box;
+  padding: 20px;
 }
 
 .catbox {
-
   width: 100%;
   height: 100%;
   display: flex;
@@ -370,37 +364,24 @@ input::placeholder {
 }
 
 .cat-face {
-  background-color: #000000;
+  background-color: #000;
   color: white;
+
   width: 100%;
-  height: 100%;
   min-height: 120px;
+
   padding: 20px;
   border-radius: 25px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.orelha-direita {
-
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  background-color: coral;
-  border-radius: 90% 35% 90% 5%;
-
-  transform: rotate(-185deg);
-
-  top: -18px;
-  right: -18px;
-  z-index: -1;
-
-}
-
+.orelha-direita,
 .orelha-esquerda {
   position: absolute;
   width: 150px;
@@ -408,55 +389,156 @@ input::placeholder {
   background-color: coral;
 
   border-radius: 90% 35% 90% 5%;
-
-  transform: rotate(92.5deg);
-
-
-  top: -15px;
-  left: -18px;
   z-index: -1;
 }
 
+.orelha-direita {
+  top: -18px;
+  right: -18px;
+  transform: rotate(-185deg);
+}
+
+.orelha-esquerda {
+  top: -15px;
+  left: -18px;
+  transform: rotate(92.5deg);
+}
 
 .bg-patinhas {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   z-index: -1;
   opacity: 0.15;
+
   background-image:
     url('../img/patinhas-background.png'),
     url('../img/patinhas-background.png');
+
   background-position: -1 1, 30px 30px;
-
   background-size: 160px 160px;
-
   background-repeat: repeat;
+
   background-color: white;
 }
 
-
-.custom-field {
-  border: 2px solid #ccc;
-  padding: 0 12px;
-  height: 56px; 
-  display: flex;
-  align-items: center; 
+/* cores do material desing */
+:root {
+  --cor-primaria: #6750a4;
+  --cor-texto-variante: #49454f;
+  --cor-borda: #79747e;
+  --fonte-titulo: 'Bungee', cursive;
 }
 
-.custom-field legend {
-  color: #666;
-  padding: 0 5px;
-  font-size: 12px;
+.addGatos {
+  max-width: 400px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
 }
 
-.custom-field input {
-  border: none;
-  padding: 12px;
+.titulo-sessao {
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+}
+
+.bloco-campo {
+  margin-bottom: 20px;
   width: 100%;
+}
+
+.campo-texto {
+  position: relative;
+  min-height: 56px;
+
+  border: 1px solid var(--cor-borda);
+  border-radius: 4px;
+
+  transition: border 0.2s;
+}
+
+.campo-texto:focus-within {
+  border: 2px solid var(--cor-primaria);
+}
+
+.entrada-dados {
+  width: 100%;
+  height: 56px;
+
+  padding: 16px;
+  font-size: 16px;
+
+  border: none;
   outline: none;
-  height: 100%;
+
   background: transparent;
+  box-sizing: border-box;
+}
+
+.area-texto {
+  height: auto;
+}
+
+textarea.entrada-dados {
+  height: 100px;
+  resize: vertical;
+  padding-top: 20px;
+}
+
+.rotulo {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+
+  background: white;
+  padding: 0 4px;
+
+  color: var(--cor-texto-variante);
+
+  transition: 0.2s;
+  pointer-events: none;
+}
+
+.entrada-dados:focus ~ .rotulo,
+.entrada-dados:not(:placeholder-shown) ~ .rotulo {
+  top: -10px;
+  left: 12px;
+  font-size: 12px;
+  color: var(--cor-primaria);
+}
+
+.legenda-sexo {
+  font-family: var(--fonte-titulo);
+  margin: 10px 0;
+}
+
+.grupo-sexo {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.botao {
+  padding: 10px 24px;
+  border-radius: 20px;
+  border: none;
+
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.botao.principal {
+  background: var(--cor-primaria);
+  color: white;
+}
+
+.botao.secundario {
+  background: #e6e0e9;
+  color: #1d1b20;
+}
+
+.botao.texto {
+  background: transparent;
+  color: var(--cor-primaria);
 }

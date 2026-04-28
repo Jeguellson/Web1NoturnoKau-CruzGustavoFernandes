@@ -178,40 +178,78 @@
 
     <div class="crudl">
       <div class="addGatos">
-        <h2>Adicionar Gatos:</h2>
+        <h2 class="titulo-sessao">Adicionar Gatos:</h2>
+
         <form class="formGato" novalidate>
-          <fieldset class="custom-field">
-            <legend>Nome Gato</legend>
-            <input type="text" id="nome_gato" required placeholder="Nome:" />
-          </fieldset>
-
-          <fieldset class="custom-field">
-            <legend>Descrição</legend>
-            <input type="text" id="descricao_gato" required placeholder="Descrição:"/>
-          </fieldset>
-
-          <fieldset class="custom-field">
-            <legend>Idade</legend>
-            <input type="number" id="idadeGato" required placeholder="Idade:"/>
-          </fieldset>
-
-          <p style="color: black; font-family: Bungee">Sexo:</p>
-
-          <div class="sexo">
-            <input type="radio" name="sexo" value="M" id="sexo_m" required />
-            <label for="sexo_m">Masculino</label>
-
-            <input type="radio" name="sexo" value="F" id="sexo_f" required />
-            <label for="sexo_f">Feminino</label>
+          <div class="bloco-campo">
+            <div class="campo-texto contornado">
+              <input
+                type="text"
+                id="nome_gato"
+                class="entrada-dados"
+                required
+                placeholder=" "
+              />
+              <label for="nome_gato" class="rotulo">Nome do Gato</label>
+            </div>
           </div>
 
-          <label for="observacao">Observação:</label>
-          <textarea type="text" id="observacao"></textarea>
+          <div class="bloco-campo">
+            <div class="campo-texto contornado">
+              <input
+                type="text"
+                id="descricao_gato"
+                class="entrada-dados"
+                required
+                placeholder=" "
+              />
+              <label for="descricao_gato" class="rotulo">Descrição</label>
+            </div>
+          </div>
 
-          <button type="submit">Cadastrar</button>
-          <button type="reset">Cancelar Ação</button>
+          <div class="bloco-campo">
+            <div class="campo-texto contornado">
+              <input
+                type="number"
+                id="idadeGato"
+                class="entrada-dados"
+                required
+                placeholder=" "
+              />
+              <label for="idadeGato" class="rotulo">Idade</label>
+            </div>
+          </div>
 
-          <button type="button" id="listar">Listar Todos</button>
+          <p class="legenda-sexo">Sexo:</p>
+          <div class="grupo-sexo">
+            <label class="opcao-radio">
+              <input type="radio" name="sexo" value="M" id="sexo_m" required />
+              <span>Masculino</span>
+            </label>
+            <label class="opcao-radio">
+              <input type="radio" name="sexo" value="F" id="sexo_f" required />
+              <span>Feminino</span>
+            </label>
+          </div>
+
+          <div class="bloco-campo">
+            <div class="campo-texto contornado area-texto">
+              <textarea
+                id="observacao"
+                class="entrada-dados"
+                placeholder=" "
+              ></textarea>
+              <label for="observacao" class="rotulo">Observação</label>
+            </div>
+          </div>
+
+          <div class="acoes-botoes">
+            <button type="submit" class="botao principal">Cadastrar</button>
+            <button type="reset" class="botao secundario">Cancelar Ação</button>
+            <button type="button" id="listar" class="botao texto">
+              Listar Todos
+            </button>
+          </div>
         </form>
       </div>
     </div>
