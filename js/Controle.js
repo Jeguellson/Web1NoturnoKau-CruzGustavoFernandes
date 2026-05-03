@@ -64,6 +64,18 @@ function renderizarTabela() {
 }
 
 
+function abrirMenu() {
+  document.getElementById('menu').classList.add('aberto');
+  document.getElementById('scrim').classList.add('ativo');
+  document.body.style.overflow = 'hidden';
+}
+
+function fecharMenu() {
+  document.getElementById('menu').classList.remove('aberto');
+  document.getElementById('scrim').classList.remove('ativo');
+  document.body.style.overflow = '';
+}
+
 
 
 

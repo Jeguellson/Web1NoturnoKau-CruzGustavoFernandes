@@ -1,8 +1,8 @@
 body {
+  padding-top: 70px;
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
-
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -14,26 +14,34 @@ body {
   box-sizing: border-box;
 }
 
-
 .cabecalho {
+  position: fixed;
   background-color: #ff7f50;
-  padding: 10px 20px;
+  padding: 0px 20px;
   color: #fff;
+  width: 100%;
 }
 
 .navbar {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   height: 70px;
+   padding: 0 24px;
+ }
+
+.navbar-esquerda {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  position: relative;
+  gap: 10px;
 }
 
 .titulo {
   text-align: center;
   color: white;
   font-family: "Bungee";
+  font-size: 20px;
 }
-
 
 .menu {
   display: flex;
@@ -116,27 +124,24 @@ footer {
 
 
 .gato-inicio img {
-  width: 120px;
+  width: 50px;
+  margin-left: 30px;
 }
 
 .gato-final {
-  background-color: white;
-  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.4);
   border-radius: 20px;
-  border: 2px solid black;
-
   display: flex;
   align-items: center;
-  gap: 8px;
-
+  gap: 20px;
   text-decoration: none;
   color: black;
+  padding: 2px 12px;
 }
 
 .gato-final img {
-  width: 80px;
+  width: 35px;
 }
-
 
 .menu-nav {
   margin-top: 10px;
@@ -168,41 +173,28 @@ footer {
   font-size: 20px;
 }
 
-
-.submenu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-}
-
-.menu-nav li:hover .submenu {
-  display: block;
-}
-
-
 input::placeholder {
   font-style: italic;
 }
 
+.navbar-direita {
+  display: flex;
+  align-items: center;
+}
 
 .status-login {
-  font-family: "Bungee";
+  font-family: "Poppins";
+  text-transform: uppercase;
   font-weight: bold;
 }
 
-.status-box {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
+/* Necessário ?
 #statusLabel,
 #statusIcon {
   font-family: Bungee;
   height: 20px;
 }
-
+*/
 
 #lista-gatos {
   display: flex;
@@ -212,12 +204,11 @@ input::placeholder {
   padding: 10px;
   margin: 5%;
 
-  background-color: rgba(255, 165, 0, 0.2);
+  background-color: white;
 
-  border-radius: 12px;
+  border-radius: 18px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
-
 
 .crudl {
   background-color: #DCD6D0;
@@ -253,46 +244,59 @@ input::placeholder {
 }
 
 #tabela-gatos th {
-  background-color: black;
+  background-color: #f5f5f5;
   color: white;
-
-  font-family: Calibri;
-  padding: 10px;
+  font-family: Poppins;
+  padding: 14px 16px;
+  color: #7a2800;
 }
 
 #tabela-gatos td {
-  padding: 8px;
-  border-bottom: 1px solid black;
-  font-family: Ebrima;
+  padding: 14px 16px;
+  border-bottom: 1px solid #e0e0e0;
+  font-family: Poppins;
+  color: #1a1a1a;
 }
 
 #tabela-gatos tr:hover {
   background-color: #f0f0f0;
 }
 
-
 .btn-alterar {
-  background-color: green;
-  color: white;
+  background-color: #e0e0e0;
+  color: black;
   border-radius: 5px;
-
+  border: none;
+  cursor: pointer;
   width: 100px;
-  padding: 5px;
+  padding: 8px 16px;
+  font-family: Poppins;
+  transition: background 0.2s, opacity 0.2s;
+}
 
-  font-family: Bungee;
+.btn-alterar:hover {
+  background-color: #d0d0d0;
 }
 
 .btn-excluir {
-  background-color: red;
+  background-color: #7a2800;
   color: white;
-  border-radius: 4px;
-
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
   width: 100px;
-  padding: 5px;
-
-  font-family: Bungee;
+  padding: 8px 16px;
+  font-family: Poppins;
+  transition: background 0.2s, opacity 0.2s;
 }
 
+.btn-excluir:hover {
+  background-color: #5c1e00;
+}
+
+#tabela-gatos td:last-child {
+  text-align: center;
+}
 
 #tituloLogin {
   color: white;
@@ -423,7 +427,7 @@ input::placeholder {
 
 /* cores do material desing */
 :root {
-  --cor-primaria: #6750a4;
+  --cor-primaria: #ff7f50;
   --cor-texto-variante: #49454f;
   --cor-borda: #79747e;
   --fonte-titulo: 'Bungee', cursive;
@@ -528,17 +532,182 @@ textarea.entrada-dados {
   transition: 0.3s;
 }
 
+.acoes-botoes {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
 .botao.principal {
   background: var(--cor-primaria);
   color: white;
+  margin-bottom: 5px;
+  font-family: Poppins;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: box-shadow 0.2s, transform 0.1s;
+  cursor: pointer;
+}
+
+.botao.principal:hover {
+  box-shadow: 0    5px   5px  #A9A9A9;
 }
 
 .botao.secundario {
   background: #e6e0e9;
   color: #1d1b20;
+  font-family: Poppins;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: box-shadow 0.2s, transform 0.1s;
+  cursor: pointer;
+}
+
+.botao.secundario:hover {
+  box-shadow: 0    5px   5px  #A9A9A9;
 }
 
 .botao.texto {
-  background: transparent;
-  color: var(--cor-primaria);
+  background: #e6e0e9;
+  color: black;
+  margin-top: 5px;
+  font-family: Poppins;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: box-shadow 0.2s, transform 0.1s;
+  cursor: pointer;
+}
+
+.botao.texto:hover {
+  box-shadow: 0    5px   5px  #A9A9A9;
+}
+
+#scrim {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+#menu {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  z-index: 400;
+  width: 280px;
+  background: white;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 16px rgba(0,0,0,0.15);
+}
+
+#menu.aberto {
+  transform: translateX(0);
+}
+
+#scrim.ativo {
+  display: block;
+}
+
+#gato-cabecalho {
+  background: rgba(255, 127, 80, 0.15);
+  border-radius: 20%;
+  padding: 6px;
+  box-shadow: 0 0 6px #ff7f50;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-cabecalho span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-cabecalho {
+  font-family: "Bungee";
+  font-size: 20px;
+  padding: 0 24px 16px;
+  border-bottom: 1px solid #e8c4b0;
+  margin-bottom: 8px;
+  color: black;
+  display: flex;
+  flex-content: column;
+  gap: 12px;
+}
+
+.submenu {
+  display: flex;
+  flex-direction: column;
+}
+
+#menu a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  text-decoration: none;
+  color: #1a1a1a;
+  font-family: "Poppins";
+  font-size: 12px;
+  transition: background 0.2s;
+}
+
+#menu a:hover {
+  background: #F5F5F5;
+  color: #7a2800;
+}
+
+#menu a.menu-secao {
+  display: block;
+  padding: 16px 24px 4px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.08px;
+  text-transform: uppercase;
+  color: black;
+  font-family: "Poppins";
+  color: #7a2800;
+}
+
+#menu a.menu-subitem {
+  padding: 11px 24px 11px 48px;
+  font-size: 13px;
+  color: #555;
+  margin-left: 0;
+}
+
+#menu a.menu-subitem:hover {
+  background: #F5F5F5;
+  color:#7a2800;
+}
+
+.menu-divisor {
+  height: 1px;
+  background: #7a2800;
+  margin: 8px 16px;
+}
+
+.menu-subitem {
+  margin-left: 30px;
+}
+
+#adocao {
+  margin-top: 50px;
+}
+
+#adocao-subtitulo {
+  font-family: "Poppins";
+  font-size: 14px;
 }
