@@ -542,3 +542,34 @@ textarea.entrada-dados {
   background: transparent;
   color: var(--cor-primaria);
 }
+
+#details-description {
+  border: 1px solid transparent;
+  padding-top: 10px;
+  font-family: var(--fonte-titulo);
+  transition: 0.2s;
+}
+
+#details-description:hover {
+ border: 1px solid rgb(0, 0, 0);
+}
+
+
+
+#sumario {
+  padding-bottom: 10px;
+  list-style: none;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+ 
+}
+#sumario::-webkit-details-marker {
+  display: none;
+}
+
+.acoes-botoes{
+display: flex;
+justify-content: center;
+flex-direction: column;
+}
