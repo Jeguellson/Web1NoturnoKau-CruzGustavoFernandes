@@ -7,20 +7,86 @@
     <link rel="stylesheet" href="/css/principal.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Bungee&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   </head>
   <body>
+
+  <div id="scrim" onclick="fecharMenu()"></div>
+
+  <nav id="menu">
+    <div class="menu-cabecalho">
+      <img id="gato-cabecalho" src="https://cdn-icons-png.flaticon.com/512/3369/3369473.png" width="50px" height="50px">
+
+      <div class="menu-cabecalho-textos">
+        <span>Adopt Cat</span>
+        <span id="adocao-subtitulo">Adoção responsável 🐾</span>
+      </div>
+    </div>
+
+    <div class="submenu">
+      <a class="menu-secao">Principal</a>
+      <a href="#adocao" onclick="fecharMenu()">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" width="20" height="20"> Início
+      </a>
+
+      <a href="#adocao" onclick="fecharMenu()" class="menu-secao">Adoção</a>
+      <a href="#filhotes" onclick="fecharMenu()" class="menu-subitem">
+        <img src="https://images.emojiterra.com/google/noto-emoji/unicode-16.0/bw/512px/1f408-2b1b.png" width="20px" height="20px">
+        Filhotes</a>
+      <a href="#adultos"  onclick="fecharMenu()" class="menu-subitem">
+        <img src="https://images.emojiterra.com/microsoft/fluent-emoji/15.1/512px/1f408-2b1b_high_contrast.png" width="20px" height="20px">
+        Adultos</a>
+
+      <div class="menu-divisor"></div>
+
+      <a href="#projeto" onclick="fecharMenu()" class="menu-secao">Projeto</a>
+      <a href="#historia"    onclick="fecharMenu()" class="menu-subitem">
+        <img src="https://static.vecteezy.com/system/resources/previews/069/862/496/non_2x/a-black-and-white-icon-of-a-book-free-png.png" width="20px" height="28px">
+        História</a>
+      <a href="#voluntarios" onclick="fecharMenu()" class="menu-subitem">
+        <img src="https://cdn-icons-png.flaticon.com/512/571/571825.png" width="20px" height="20px">
+        Voluntários</a>
+
+      <div class="menu-divisor"></div>
+
+      <a href="#participe" onclick="fecharMenu()"  class="menu-secao">Participe</a>
+      <a href="#doacao"   onclick="fecharMenu()" class="menu-subitem">
+        <img src="https://cdn-icons-png.freepik.com/512/1052/1052336.png" width="20px" height="20px">
+        Doação</a>
+      <a href="#contato"  onclick="fecharMenu()" class="menu-subitem">
+        <img src="https://www.freepnglogos.com/uploads/logo-telefone-png/icone-telefone-png-download-3.png" width="20px" height="20px">
+        Contato</a>
+
+      <div class="menu-divisor"></div>
+
+      <a class="menu-secao">Gerenciar Gatos</a>
+      <a href="#crudl" onclick="fecharMenu()" class="menu-subitem">
+        <img src="https://images.icon-icons.com/933/PNG/512/add-button-inside-black-circle_icon-icons.com_72881.png" width="20px" height="20px">
+        Adicionar Gato</a>
+      <a href="#crudl" onclick="fecharMenu()" class="menu-subitem">
+        <img id="hamburguer-listar" src="https://cdn-icons-png.flaticon.com/512/54/54878.png" width="20px" height="20px">
+        Listar Gatos</a>
+    </div>
+  </nav>
+
     <header class="cabecalho">
       <nav class="navbar">
+        <div class="navbar-esquerda">
+        <img id="hamburguer" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Hamburger-menu_-_Delapouite_-_white_-_game-icons.svg/960px-Hamburger-menu_-_Delapouite_-_white_-_game-icons.svg.png" width="40px" height="40px" onclick="abrirMenu()" style="cursor:pointer;">
         <a href="#" class="gato-inicio" onclick="window.location.reload()">
           <img
-            src="https://cdn-icons-png.flaticon.com/512/8463/8463545.png "
+            src="https://cdn-icons-png.flaticon.com/512/3369/3369473.png"
             alt="Gato início"
             class="nav-icon"
           />
         </a>
         <h1 class="titulo">Adopt Cat - Salvando Vidas</h1>
+        </div>
+
+        <div class="navbar-direita">
         <a href="TelaLogin.html" class="gato-final">
           <img
             id="pata"
@@ -29,33 +95,7 @@
           />
           <span class="status-login" id="status-value">Deslogado</span>
         </a>
-      </nav>
-      <nav class="menu-nav">
-        <ul>
-          <li>
-            <a href="#adocao">Adoção</a>
-            <ul class="submenu">
-              <li><a href="#filhotes">Filhotes</a></li>
-              <li><a href="#adultos">Adultos</a></li>
-            </ul>
-          </li>
-
-          <li>
-            <a href="#projeto">Projeto</a>
-            <ul class="submenu">
-              <li><a href="#historia">História</a></li>
-              <li><a href="#voluntarios">Voluntários</a></li>
-            </ul>
-          </li>
-
-          <li>
-            <a href="#participe">Participe</a>
-            <ul class="submenu">
-              <li><a href="#doacao">Doação</a></li>
-              <li><a href="#contato">Contato</a></li>
-            </ul>
-          </li>
-        </ul>
+        </div>
       </nav>
     </header>
     <details id="details-description">
@@ -182,7 +222,7 @@
     </details> 
 
     <div class="crudl">
-      <div class="addGatos">
+      <div id="crudl" class="addGatos">
         <h2 class="titulo-sessao">Adicionar Gatos:</h2>
 
         <form class="formGato" novalidate>
@@ -249,9 +289,16 @@
           </div>
 
           <div class="acoes-botoes">
-            <button type="submit" class="botao principal">Cadastrar</button>
-            <button type="reset" class="botao secundario">Cancelar Ação</button>
+            <button type="submit" class="botao principal">
+              <img id="cadastrarIcon" src="https://cdn-icons-png.flaticon.com/512/69/69539.png" width="15" height="15">
+              Cadastrar
+            </button>
+            <button type="reset" class="botao secundario">
+              <img id="cancelarIcon" src="https://cdn-icons-png.flaticon.com/512/1/1766.png" width="12" height="12">
+              Cancelar Ação
+            </button>
             <button type="button" id="listar" class="botao texto">
+              <img id="listarIcon" src="https://www.vhv.rs/dpng/d/362-3625044_menu-bar-menu-bar-icon-png-transparent-png.png" width="12px" height="12px">
               Listar Todos
             </button>
           </div>
