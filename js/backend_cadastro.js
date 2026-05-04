@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-
   if (document.getElementById("lembrarMe")) {
     if (localStorage.getItem("lembrarMe") === "true") {
       document.getElementById("lembrarMe").checked = true;
@@ -20,24 +18,24 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("pata").src = "../img/iconePataVerde.png";
   }
 
-  document.addEventListener('keydown', function (event) {
-    const inputNome = document.getElementById('inputNome');
-    const inputSenha = document.getElementById('inputSenha');
+  document.addEventListener("keydown", function (event) {
+    const inputNome = document.getElementById("inputNome");
+    const inputSenha = document.getElementById("inputSenha");
 
     if (!inputNome || !inputSenha) return;
 
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       cadastrar(inputNome.value, inputSenha.value);
     }
-    if (event.code === 'Backspace') {
+    if (event.code === "Backspace") {
       sair();
     }
   });
 });
 
 function salvarDados(nome) {
-  sessionStorage.setItem('status', 'true');
-  sessionStorage.setItem('usuario', nome);
+  sessionStorage.setItem("status", "true");
+  sessionStorage.setItem("usuario", nome);
 }
 
 function cookies() {
@@ -47,7 +45,9 @@ function cookies() {
 function sair() {
   sessionStorage.clear();
   document.cookie.split(";").forEach(function (c) {
-    document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+    document.cookie = c
+      .replace(/^ +/, "")
+      .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
   });
 }
 
@@ -69,4 +69,13 @@ function cadastrar(nome, senha) {
   window.location.href = "TelaPrincipal.html";
 }
 
+const detalhes = document.getElementById("details-description");
+const summary = document.getElementById("sumario");
 
+const textoOriginal = summary.textContent;
+
+detalhes.addEventListener("toggle", function () {
+  summary.textContent = this.open
+    ? "Fechar informações"
+    : textoOriginal;
+});
