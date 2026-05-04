@@ -35,16 +35,37 @@
             <label id="statusLabel">Inativo</label>
           </div>
 
-          <input type="text" id="inputNome" placeholder="Nome">
-          <input type="text" id="inputSenha" placeholder="Senha">
+          <!-- <input type="text" id="inputNome" placeholder="Nome"> -->
+          <div class="container">
+            <div class="campo-texto login">
+              <input type="text" id="inputNome" class="entrada-dados login" required placeholder=" " />
+              <label for="nome_gato" class="rotulo login">Nome</label>
+            </div>
+            <!-- <input type="text" id="inputSenha" placeholder="Senha"> -->
+            <div class="campo-texto login">
 
-          <div class="opcao">
-            <input type="checkbox" id="lembrarMe">
-            <label for="lembrarMe">Lembrar-me</label>
+              <input type="text" id="inputSenha" class="entrada-dados login" required placeholder=" " />
+              <label for="nome_gato" class="rotulo login">Senha</label>
+            </div>
+
+            <div class="row">
+              <div class="opcao">
+                <input type="radio" id="lembrarMe">
+                <label for="lembrarMe"></label>
+              </div>
+              <label class="lembrarMe">Lembrar-me</label>
+            </div>
+
+            <div class="acoes-botoes">
+              <button type="submit" class="botao login"
+                onclick="cadastrar(document.getElementById('inputNome').value, document.getElementById('inputSenha').value)">
+
+                Entrar
+              </button>
+
+
+            </div>
           </div>
-
-          <input id="login" type="button" value="Enviar"
-            onclick="cadastrar(document.getElementById('inputNome').value, document.getElementById('inputSenha').value)">
 
         </div>
 
@@ -54,9 +75,9 @@
 
   </div>
 
-  
 
-<div class="bg-patinhas"></div>
+
+  <div class="bg-patinhas"></div>
   <footer>
     Copyright de Adopt Cat - Fundação sem Fins Lucrativos
   </footer>
