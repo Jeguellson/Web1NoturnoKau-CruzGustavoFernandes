@@ -1,5 +1,4 @@
 body {
-  padding-top: 70px;
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
@@ -207,7 +206,6 @@ footer {
   text-align: center;
 }
 
-
 .gato-inicio img {
   width: 50px;
   margin-left: 30px;
@@ -274,6 +272,17 @@ footer {
 
   font-family: Bungee;
   font-size: 20px;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.menu-nav li:hover .submenu {
+  display: block;
 }
 
 input::placeholder {
@@ -528,7 +537,6 @@ input::placeholder {
   background-color: white;
 }
 
-/* cores do material desing */
 :root {
   --cor-primaria: #ff7f50;
   --cor-texto-variante: #49454f;
@@ -595,7 +603,7 @@ textarea.entrada-dados {
 .rotulo {
   position: absolute;
   left: 16px;
-  top: 16px;
+  top: 18px;
 
   background: white;
   padding: 0 4px;
@@ -705,8 +713,6 @@ textarea.entrada-dados {
 #details-description:hover {
  border: 1px solid rgb(0, 0, 0);
 }
-
-
 
 #sumario {
   padding-bottom: 10px;
