@@ -190,13 +190,14 @@ body {
 .adopt-description {
   background-color: #ffffff;
   margin: 40px auto;
+  margin-top: 100px;
   max-width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   border-radius: 10px;
-  border: 2px solid #ff7f50;
+ 
 
   font-size: 15px;
   gap: 16px;
@@ -750,25 +751,14 @@ textarea.entrada-dados {
 }
 
 #details-description {
-  border: 1px solid transparent;
-  padding-top: 10px;
-  font-family: var(--fonte-titulo);
-  transition: 0.2s;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  border: none;
 }
 
 #details-description:hover {
   border: 1px solid rgb(0, 0, 0);
-}
-
-#sumario {
-  padding-bottom: 10px;
-  list-style: none;
-  cursor: pointer;
-  display: block;
-  text-align: center;
-}
-#sumario::-webkit-details-marker {
-  display: none;
 }
 
 .acoes-botoes {
