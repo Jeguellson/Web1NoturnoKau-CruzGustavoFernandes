@@ -1,5 +1,4 @@
 body {
-  padding-top: 70px;
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
@@ -35,10 +34,13 @@ body {
 
 .cabecalho {
   position: fixed;
+  top: 0;
+  left: 0;
   background-color: #ff7f50;
   padding: 0px 20px;
   color: #fff;
   width: 100%;
+  z-index: 9999;
 }
 
 .navbar {
@@ -62,17 +64,90 @@ body {
   font-size: 20px;
 }
 
-.menu {
+.submenu {
   display: flex;
-  justify-content: center;
-  font-family: Poppins;
-  cursor: pointer;
+  flex-direction: column;
+}
 
-  padding: 8px 15px;
-  border-radius: 5px;
+#menu a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  text-decoration: none;
+  color: #1a1a1a;
+  font-family: "Poppins";
+  font-size: 12px;
+  transition: background 0.2s;
+}
 
-  background-color: black;
-  color: white;
+#menu a:hover {
+  background: #F5F5F5;
+  color: #7a2800;
+}
+
+#menu a.menu-secao {
+  display: block;
+  padding: 16px 24px 4px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.08px;
+  text-transform: uppercase;
+  color: black;
+  font-family: "Poppins";
+  color: #7a2800;
+}
+
+#menu a.menu-subitem {
+  padding: 11px 24px 11px 48px;
+  font-size: 13px;
+  color: #555;
+  margin-left: 0;
+}
+
+#menu a.menu-subitem:hover {
+  background: #F5F5F5;
+  color:#7a2800;
+}
+
+.menu-divisor {
+  height: 1px;
+  background: #7a2800;
+  margin: 8px 16px;
+}
+
+.menu-subitem {
+  margin-left: 30px;
+}
+
+#menu {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  z-index: 400;
+  width: 280px;
+  background: white;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 16px rgba(0,0,0,0.15);
+}
+
+#menu.aberto {
+  transform: translateX(0);
+}
+
+#scrim.ativo {
+  display: block;
+}
+
+#scrim {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .menu:hover {
@@ -80,6 +155,15 @@ body {
   color: #fff;
 }
 
+
+#adocao {
+  margin-top: 50px;
+}
+
+#adocao-subtitulo {
+  font-family: "Poppins";
+  font-size: 14px;
+}
 
 .adopt-description {
   background-color: #ffffff;
@@ -141,7 +225,6 @@ footer {
   text-align: center;
 }
 
-
 .gato-inicio img {
   width: 50px;
   margin-left: 30px;
@@ -160,6 +243,24 @@ footer {
 
 .gato-final img {
   width: 35px;
+}
+
+.menu-cabecalho span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-cabecalho {
+  font-family: "Bungee";
+  font-size: 20px;
+  padding: 0 24px 16px;
+  border-bottom: 1px solid #e8c4b0;
+  margin-bottom: 8px;
+  color: black;
+  display: flex;
+  flex-content: column;
+  gap: 12px;
 }
 
 .menu-nav {
@@ -190,6 +291,17 @@ footer {
 
   font-family: Bungee;
   font-size: 20px;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.menu-nav li:hover .submenu {
+  display: block;
 }
 
 input::placeholder {
@@ -443,7 +555,6 @@ input::placeholder {
   background-color: white;
 }
 
-/* cores do material desing */
 :root {
   --cor-primaria: #ff7f50;
   --cor-texto-variante: #49454f;
@@ -548,7 +659,7 @@ textarea.entrada-dados {
 .rotulo {
   position: absolute;
   left: 16px;
-  top: 16px;
+  top: 18px;
 
   background: white;
   padding: 0 4px;
@@ -640,6 +751,7 @@ textarea.entrada-dados {
   font-family: Poppins;
   display: flex;
   align-items: center;
+  margin-bottom: 5px;
   justify-content: center;
   gap: 8px;
   transition: box-shadow 0.2s, transform 0.1s;
@@ -650,9 +762,23 @@ textarea.entrada-dados {
   box-shadow: 0 5px 5px #A9A9A9;
 }
 
+
 .botao.texto {
-  background: transparent;
-  color: var(--cor-primaria);
+  background: transparent #878788;
+  color: #79747e;
+  font-family: Poppins;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  transition: box-shadow 0.2s, transform 0.1s;
+  cursor: pointer;
+}
+
+.botao.texto:hover {
+  box-shadow: 0 5px 5px #A9A9A9;
 }
 
 #details-description {
@@ -665,8 +791,6 @@ textarea.entrada-dados {
 #details-description:hover {
   border: 1px solid rgb(0, 0, 0);
 }
-
-
 
 #sumario {
   padding-bottom: 10px;
