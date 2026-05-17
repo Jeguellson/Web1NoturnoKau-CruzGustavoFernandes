@@ -7,6 +7,12 @@
   <title>Faça Login em Sua Conta</title>
   <link rel="stylesheet" href="/css/principal.css" />
   <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
 </head>
 
 <body class="body-cadastro">
@@ -35,16 +41,37 @@
             <label id="statusLabel">Inativo</label>
           </div>
 
-          <input type="text" id="inputNome" placeholder="Nome">
-          <input type="text" id="inputSenha" placeholder="Senha">
+          <!-- <input type="text" id="inputNome" placeholder="Nome"> -->
+          <div class="container">
+            <div class="campo-texto login">
+              <input type="text" id="inputNome" class="entrada-dados login" required placeholder=" " />
+              <label for="nome_gato" class="rotulo login">Nome</label>
+            </div>
+            <!-- <input type="text" id="inputSenha" placeholder="Senha"> -->
+            <div class="campo-texto login">
 
-          <div class="opcao">
-            <input type="checkbox" id="lembrarMe">
-            <label for="lembrarMe">Lembrar-me</label>
+              <input type="text" id="inputSenha" class="entrada-dados login" required placeholder=" " />
+              <label for="nome_gato" class="rotulo login">Senha</label>
+            </div>
+
+            <div class="row">
+              <div class="opcao">
+                <input type="radio" id="lembrarMe">
+                <label for="lembrarMe"></label>
+              </div>
+              <label class="lembrarMe">Lembrar-me</label>
+            </div>
+
+            <div class="acoes-botoes">
+              <button type="submit" class="botao login"
+                onclick="cadastrar(document.getElementById('inputNome').value, document.getElementById('inputSenha').value)">
+
+                Entrar
+              </button>
+
+
+            </div>
           </div>
-
-          <input id="login" type="button" value="Enviar"
-            onclick="cadastrar(document.getElementById('inputNome').value, document.getElementById('inputSenha').value)">
 
         </div>
 
@@ -54,9 +81,9 @@
 
   </div>
 
-  
 
-<div class="bg-patinhas"></div>
+
+  <div class="bg-patinhas"></div>
   <footer>
     Copyright de Adopt Cat - Fundação sem Fins Lucrativos
   </footer>
