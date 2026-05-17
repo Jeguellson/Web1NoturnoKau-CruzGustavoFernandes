@@ -1,5 +1,7 @@
 const slider = document.getElementById("cardsSlider");
 const cards = document.querySelectorAll(".description-cards");
+const arrowLeft = document.querySelector(".icon-left");
+const arrowRight = document.querySelector(".icon-right");
 
 let currentSlide = 0;
 
@@ -9,6 +11,14 @@ function updateSlider() {
 
   cards.forEach((card, index) => {
     card.classList.remove("active", "side");
+    
+    arrowLeft.style.display = currentSlide === 0 ? "none" : "flex";
+
+    if (currentSlide == cards.length - 1) {
+      arrowRight.style.display = "none";
+    } else {
+      arrowRight.style.display = "flex";
+    }
 
     if (index === currentSlide) {
       card.classList.add("active");
@@ -31,6 +41,5 @@ function sliderScrollLeft() {
     updateSlider();
   }
 }
-
 
 updateSlider();
