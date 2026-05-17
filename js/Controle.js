@@ -1,6 +1,8 @@
 let gatos = JSON.parse(localStorage.getItem("gatos")) || [];
 
 let indiceEditando = -1;
+let ordemNomeAsc = true;
+
 
 function excluirGato(i) {
   let gatosSalvos = JSON.parse(localStorage.getItem("gatos")) || [];
@@ -34,7 +36,11 @@ function renderizarTabela() {
 
   tabela.innerHTML = `
     <tr>
-      <th>Nome</th>
+      <th id="th-nome">
+        <button type="button" class="btn-ordenar" onclick="ordenarPorNome()">
+          Nome <span class="seta-ordenacao">▲</span>
+        </button>
+      </th>
       <th>Raça</th>
       <th>Sexo</th>
       <th>Idade</th>
@@ -72,6 +78,24 @@ function fecharMenu() {
   document.getElementById('scrim').classList.remove('ativo');
   document.body.style.overflow = '';
 }
+
+
+
+
+function ordenarPorNome() {
+  gatos.sort((a, b) => {
+    if (ordemNomeAsc) {
+      return a.nome.localeCompare(b.nome);
+    } else {
+      return b.nome.localeCompare(a.nome);
+    }
+  });
+
+  ordemNomeAsc = !ordemNomeAsc;
+  localStorage.setItem("gatos", JSON.stringify(gatos));
+  renderizarTabela();
+}
+
 
 
 
