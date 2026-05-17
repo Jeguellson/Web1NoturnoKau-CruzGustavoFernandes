@@ -18,10 +18,8 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  /* ou row para horizontal */
   gap:
-    12px;
-  /* Espaço pequeno do Material Design (ou 16px) */
+  12px;
 }
 
 .div-item {
@@ -70,18 +68,13 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-
   padding: 12px 20px;
   margin: 4px 10px;
-
   border-radius: 10px;
-
   font-family: "Poppins";
   font-size: 14px;
-
   color: #333;
   text-decoration: none;
-
   transition: 0.2s ease;
 }
 
@@ -215,7 +208,7 @@ body {
   justify-content: center;
 
   border-radius: 10px;
- 
+
 
   font-size: 15px;
   gap: 16px;
@@ -365,15 +358,12 @@ input::placeholder {
 */
 
 #lista-gatos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-
-  padding: 10px;
-  margin: 5%;
+  width: 100%;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 24px;
 
   background-color: white;
-
   border-radius: 18px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -408,25 +398,34 @@ input::placeholder {
 
 #tabela-gatos {
   width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-collapse: collapse;
 }
 
 #tabela-gatos th {
-  background-color: #f5f5f5;
-  color: white;
+  height: 56px;
+  padding: 0 16px;
+  background-color: #e8e8e8;
   font-family: Poppins;
-  padding: 14px 16px;
+  padding: 14px ;
   color: #7a2800;
 }
 
 #tabela-gatos td {
-  padding: 14px 16px;
+  height: 52px;
+  padding: 0 16px;
   border-bottom: 1px solid #e0e0e0;
   font-family: Poppins;
   color: #1a1a1a;
 }
 
+#tabela-gatos tr {
+  text-align: left;
+}
+
 #tabela-gatos tr:hover {
-  background-color: #f0f0f0;
+  background-color: #f9f9f9;
 }
 
 .btn-alterar {
@@ -466,7 +465,7 @@ input::placeholder {
 }
 
 #tabela-gatos td:last-child {
-  text-align: center;
+  text-align: left;
 }
 
 #tituloLogin {
@@ -733,6 +732,8 @@ textarea.entrada-dados {
   display: flex;
   gap: 20px;
   margin-bottom: 24px;
+  align-content: center;
+
 }
 
 .botao {
@@ -794,7 +795,7 @@ textarea.entrada-dados {
 
 .botao.texto {
   background: transparent #878788;
-  color: #79747e;
+  color: #black;
   font-family: Poppins;
 
   display: flex;
@@ -827,4 +828,11 @@ textarea.entrada-dados {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.seta {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 12px;
+  transition: transform 0.2s ease;
 }

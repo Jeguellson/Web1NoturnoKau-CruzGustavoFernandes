@@ -18,12 +18,11 @@ function alterarGato(i) {
   const gato = gatosSalvos[i];
 
   document.getElementById("nome_gato").value = gato.nome;
-  document.getElementById("descricao_gato").value = gato.descricao;
+  document.getElementById("raca_gato").value = gato.raca;
   document.getElementById("idadeGato").value = gato.idade;
   document.querySelector(`input[name="sexo"][value="${gato.sexo}"]`).checked = true;
-  document.getElementById("observacao").value = gato.observacao;
 
-  indiceEditando = i; // só guarda qual linha está sendo editada
+  indiceEditando = i;
 }
 
 
@@ -36,10 +35,9 @@ function renderizarTabela() {
   tabela.innerHTML = `
     <tr>
       <th>Nome</th>
-      <th>Descrição</th>
+      <th>Raça</th>
       <th>Sexo</th>
       <th>Idade</th>
-      <th>Observação</th>
       <th>Ações</th>
     </tr>
   `;
@@ -50,10 +48,9 @@ function renderizarTabela() {
     let linha = document.createElement("tr");
     linha.innerHTML = `
       <td>${gato.nome}</td>
-      <td>${gato.descricao}</td>
+      <td>${gato.raca}</td>
       <td>${gato.sexo}</td>
       <td>${gato.idade}</td>
-      <td>${gato.observacao}</td>
       <td>
         <button class="btn-alterar" onclick="alterarGato(${i})">Alterar</button>
         <button class="btn-excluir" onclick="excluirGato(${i})">Excluir</button>
@@ -83,19 +80,17 @@ function cadastrar_Gato(event) {
   event.preventDefault();
 
   const nome = document.getElementById("nome_gato").value;
-  const descricao = document.getElementById("descricao_gato").value;
+  const raca = document.getElementById("raca_gato").value;
   const sexoSelecionado = document.querySelector('input[name="sexo"]:checked');
   const idade = document.getElementById("idadeGato").value;
-  const observacao = document.getElementById("observacao").value;
-
 
     if (nome === "") {
       alert("Insira o nome do gato!")
       return;
     }
 
-    if (descricao === "") {
-      alert("Insira a descrição do gato!")
+    if (raca === "") {
+      alert("Insira a raça do gato!")
       return;
     }
 
@@ -106,10 +101,9 @@ function cadastrar_Gato(event) {
 
     let gato = {
       nome: nome,
-      descricao: descricao,
+      raca: raca,
       sexo: sexoSelecionado.value,
       idade: idade,
-      observacao: observacao,
     };
 
     if (indiceEditando === -1) {
