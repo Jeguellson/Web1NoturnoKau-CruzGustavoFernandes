@@ -5,7 +5,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Faça Login em Sua Conta</title>
-  <link rel="stylesheet" href="/css/principal.css" />
+  <link rel="stylesheet" href="..\css\textField.css" />
+  <link rel="stylesheet" href="../css/principal.css" />
   <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,16 +44,49 @@
 
           <!-- <input type="text" id="inputNome" placeholder="Nome"> -->
           <div class="container">
-            <div class="campo-texto login">
-              <input type="text" id="inputNome" class="entrada-dados login" required placeholder=" " />
-              <label for="nome_gato" class="rotulo login">Nome</label>
-            </div>
-            <!-- <input type="text" id="inputSenha" placeholder="Senha"> -->
-            <div class="campo-texto login">
+            <div class="textfield" id="textfield-containerUsuario">
+              <input type="text" id="textfield-inputUsuario" placeholder=" ">
+              <label for="textfield-inputUsuario">Nome</label>
 
-              <input type="text" id="inputSenha" class="entrada-dados login" required placeholder=" " />
-              <label for="nome_gato" class="rotulo login">Senha</label>
+              <img class="material-symbols-outined icon-error" src="../img/redIcon.png" alt="Error ao preencher campo">
+
+              <img class="material-symbols-outined icon-success" src="../img/sucessIcon.png"
+                alt="Sucesso ao preencher campo">
+
             </div>
+            <div class="textfield" id="textfield-containerUsuario">
+              <input type="text" id="textfield-inputUsuario" placeholder=" ">
+              <label for="textfield-inputUsuario">Nome</label>
+
+              <img class="material-symbols-outined icon-error" src="../img/redIcon.png" alt="Error ao preencher campo">
+
+              <img class="material-symbols-outined icon-success" src="../img/sucessIcon.png"
+                alt="Sucesso ao preencher campo">
+
+            </div>
+            <div class="textfield" id="textfield-containerUsuario">
+              <input type="text" id="textfield-inputUsuario" placeholder=" ">
+              <label for="textfield-inputUsuario">Nome</label>
+
+              <img class="material-symbols-outined icon-error" src="../img/redIcon.png" alt="Error ao preencher campo">
+
+              <img class="material-symbols-outined icon-success" src="../img/sucessIcon.png"
+                alt="Sucesso ao preencher campo">
+
+            </div>
+
+            <!-- <input type="text" id="inputSenha" placeholder="Senha"> -->
+            <div class="textfield" id="textfield-containerSenha">
+              <input type="text" id="textfield-input" placeholder=" ">
+              <label for="textfield-input">Senha</label>
+
+              <img class="material-symbols-outined icon-error" src="../img/redIcon.png" alt="Error ao preencher campo">
+
+              <img class="material-symbols-outined icon-success" src="../img/sucessIcon.png"
+                alt="Sucesso ao preencher campo">
+
+            </div>
+
 
             <div class="row">
               <div class="opcao">
@@ -64,13 +98,14 @@
 
             <div class="acoes-botoes">
               <button type="submit" class="botao login"
-                onclick="cadastrar(document.getElementById('inputNome').value, document.getElementById('inputSenha').value)">
+                onclick="cadastrar(document.getElementById('textfield-inputUsuario').value, document.getElementById('textfield-input').value)">
 
                 Entrar
               </button>
 
 
             </div>
+
           </div>
 
         </div>
@@ -89,6 +124,7 @@
   </footer>
 
   <script src="../js/backend_cadastro.js"></script>
+  
 </body>
 
 </html>

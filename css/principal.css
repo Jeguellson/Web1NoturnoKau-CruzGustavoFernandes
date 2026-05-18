@@ -19,7 +19,10 @@ body {
   /* ou row para horizontal */
   gap:
     12px;
+<<<<<<< Updated upstream
   /* Espaço pequeno do Material Design (ou 16px) */
+=======
+>>>>>>> Stashed changes
 }
 
 .div-item {
@@ -131,7 +134,26 @@ body {
   padding: 24px 0;
   display: flex;
   flex-direction: column;
+<<<<<<< Updated upstream
   box-shadow: 4px 0 16px rgba(0,0,0,0.15);
+=======
+
+  box-shadow: 12px 0 30px rgba(0, 0, 0, 0.18);
+
+  padding: 20px 0;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+
+  overflow-y: auto;
+}
+
+#menu::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #ffffff, #fafafa);
+  z-index: -1;
+>>>>>>> Stashed changes
 }
 
 #menu.aberto {
@@ -377,7 +399,11 @@ input::placeholder {
   background-color: #f5f5f5;
   color: white;
   font-family: Poppins;
+<<<<<<< Updated upstream
   padding: 14px 16px;
+=======
+  padding: 14px;
+>>>>>>> Stashed changes
   color: #7a2800;
 }
 
@@ -574,17 +600,20 @@ input::placeholder {
   font-size: 1.5rem;
   margin-bottom: 24px;
 }
+
 .row {
   display: flex;
   flex-direction: row;
   gap: 5px;
 }
+
 .lembrarMe {
   display: flex;
   align-items: center;
   gap: 5px;
   color: white;
 }
+
 .opcao {
   top: 64px;
   margin: 0.2rem;
@@ -778,7 +807,18 @@ textarea.entrada-dados {
 }
 
 .botao.texto:hover {
+<<<<<<< Updated upstream
   box-shadow: 0 5px 5px #A9A9A9;
+=======
+  box-shadow: 0 5px 5px #a9a9a9;
+
+}
+
+.botao.login {
+  color: white;
+  background:  coral;
+  font-family: 'poppins';
+>>>>>>> Stashed changes
 }
 
 #details-description {
@@ -812,4 +852,18 @@ textarea.entrada-dados {
 
 
 
+<<<<<<< Updated upstream
 }
+=======
+.btn-ordenar {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+>>>>>>> Stashed changes
