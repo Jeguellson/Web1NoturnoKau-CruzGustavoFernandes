@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 body {
   margin: 0;
   padding: 0;
@@ -16,13 +18,8 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  /* ou row para horizontal */
   gap:
     12px;
-<<<<<<< Updated upstream
-  /* Espaço pequeno do Material Design (ou 16px) */
-=======
->>>>>>> Stashed changes
 }
 
 .div-item {
@@ -67,26 +64,41 @@ body {
   font-size: 20px;
 }
 
-.submenu {
-  display: flex;
-  flex-direction: column;
-}
-
 #menu a {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 14px 24px;
-  text-decoration: none;
-  color: #1a1a1a;
+  gap: 12px;
+  padding: 12px 20px;
+  margin: 4px 10px;
+  border-radius: 10px;
   font-family: "Poppins";
-  font-size: 12px;
-  transition: background 0.2s;
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  transition: 0.2s ease;
 }
 
 #menu a:hover {
-  background: #F5F5F5;
+  background: #fff3ee;
   color: #7a2800;
+  transform: translateX(4px);
+}
+
+.menu-secao {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  color: #7a2800;
+  margin-top: 10px;
+  padding: 10px 20px;
+  opacity: 0.8;
+}
+
+#menu a img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.9;
 }
 
 #menu a.menu-secao {
@@ -109,14 +121,15 @@ body {
 }
 
 #menu a.menu-subitem:hover {
-  background: #F5F5F5;
-  color:#7a2800;
+  background: #f5f5f5;
+  color: #7a2800;
 }
 
 .menu-divisor {
   height: 1px;
-  background: #7a2800;
-  margin: 8px 16px;
+  margin: 10px 16px;
+  background: linear-gradient(to right, transparent, #7a2800, transparent);
+  opacity: 0.3;
 }
 
 .menu-subitem {
@@ -125,20 +138,20 @@ body {
 
 #menu {
   position: fixed;
-  top: 0; left: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
   z-index: 400;
-  width: 280px;
-  background: white;
+
+  width: 290px;
+  background: #ffffff;
+
   transform: translateX(-100%);
-  transition: transform 0.3s ease;
-  padding: 24px 0;
+  transition: transform 0.25s ease;
+
   display: flex;
   flex-direction: column;
-<<<<<<< Updated upstream
   box-shadow: 4px 0 16px rgba(0,0,0,0.15);
-=======
-
-  box-shadow: 12px 0 30px rgba(0, 0, 0, 0.18);
 
   padding: 20px 0;
   border-top-right-radius: 18px;
@@ -153,7 +166,6 @@ body {
   inset: 0;
   background: linear-gradient(to bottom, #ffffff, #fafafa);
   z-index: -1;
->>>>>>> Stashed changes
 }
 
 #menu.aberto {
@@ -177,7 +189,6 @@ body {
   color: #fff;
 }
 
-
 #adocao {
   margin-top: 50px;
 }
@@ -188,15 +199,15 @@ body {
 }
 
 .adopt-description {
-  background-color: #ffffff;
   margin: 40px auto;
+  margin-top: 100px;
   max-width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   border-radius: 10px;
-  border: 2px solid #ff7f50;
+
 
   font-size: 15px;
   gap: 16px;
@@ -209,7 +220,6 @@ body {
   margin-right: 5px;
   padding: 5px 10px;
 }
-
 
 h1 {
   text-align: center;
@@ -228,7 +238,6 @@ p {
   font-family: "Trebuchet MS";
   color: #555555;
 }
-
 
 footer {
   display: flex;
@@ -274,15 +283,16 @@ footer {
 }
 
 .menu-cabecalho {
-  font-family: "Bungee";
-  font-size: 20px;
-  padding: 0 24px 16px;
-  border-bottom: 1px solid #e8c4b0;
-  margin-bottom: 8px;
-  color: black;
+  padding: 16px 20px;
+  margin-top: 20%;
   display: flex;
-  flex-content: column;
+  align-items: center;
   gap: 12px;
+
+  font-family: "Bungee";
+  font-size: 18px;
+
+  color: #7a2800;
 }
 
 .menu-nav {
@@ -316,10 +326,8 @@ footer {
 }
 
 .submenu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .menu-nav li:hover .submenu {
@@ -349,21 +357,18 @@ input::placeholder {
 */
 
 #lista-gatos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-
-  padding: 10px;
-  margin: 5%;
+  width: 100%;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 24px;
 
   background-color: white;
-
   border-radius: 18px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .crudl {
-  background-color: #DCD6D0;
+  background-color: #dcd6d0;
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -390,32 +395,41 @@ input::placeholder {
   padding-bottom: 10px;
 }
 
+#tabela-gatos th:last-child,
+#tabela-gatos td:last-child {
+  width: 320px;
+}
 
 #tabela-gatos {
   width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-collapse: collapse;
 }
 
 #tabela-gatos th {
-  background-color: #f5f5f5;
-  color: white;
+  height: 56px;
+  padding: 0 16px;
+  background-color: #e8e8e8;
   font-family: Poppins;
-<<<<<<< Updated upstream
   padding: 14px 16px;
-=======
-  padding: 14px;
->>>>>>> Stashed changes
   color: #7a2800;
 }
 
 #tabela-gatos td {
-  padding: 14px 16px;
+  height: 52px;
+  padding: 0 16px;
   border-bottom: 1px solid #e0e0e0;
   font-family: Poppins;
   color: #1a1a1a;
 }
 
+#tabela-gatos tr {
+  text-align: left;
+}
+
 #tabela-gatos tr:hover {
-  background-color: #f0f0f0;
+  background-color: #f9f9f9;
 }
 
 .btn-alterar {
@@ -427,7 +441,9 @@ input::placeholder {
   width: 100px;
   padding: 8px 16px;
   font-family: Poppins;
-  transition: background 0.2s, opacity 0.2s;
+  transition:
+    background 0.2s,
+    opacity 0.2s;
 }
 
 .btn-alterar:hover {
@@ -443,7 +459,9 @@ input::placeholder {
   width: 100px;
   padding: 8px 16px;
   font-family: Poppins;
-  transition: background 0.2s, opacity 0.2s;
+  transition:
+    background 0.2s,
+    opacity 0.2s;
 }
 
 .btn-excluir:hover {
@@ -451,7 +469,7 @@ input::placeholder {
 }
 
 #tabela-gatos td:last-child {
-  text-align: center;
+  text-align: left;
 }
 
 #tituloLogin {
@@ -495,7 +513,6 @@ input::placeholder {
   display: flex;
   gap: 10px;
 }
-
 
 .corpoCadastro {
   background-color: coral;
@@ -571,10 +588,11 @@ input::placeholder {
   opacity: 0.15;
 
   background-image:
-    url('../img/patinhas-background.png'),
-    url('../img/patinhas-background.png');
+    url("../img/patinhas-background.png"), url("../img/patinhas-background.png");
 
-  background-position: -1 1, 30px 30px;
+  background-position:
+    -1 1,
+    30px 30px;
   background-size: 160px 160px;
   background-repeat: repeat;
 
@@ -585,7 +603,7 @@ input::placeholder {
   --cor-primaria: #ff7f50;
   --cor-texto-variante: #49454f;
   --cor-borda: #79747e;
-  --fonte-titulo: 'Bungee', cursive;
+  --fonte-titulo: "Bungee", cursive;
 }
 
 .addGatos {
@@ -721,6 +739,8 @@ textarea.entrada-dados {
   display: flex;
   gap: 20px;
   margin-bottom: 24px;
+  align-content: center;
+
 }
 
 .botao {
@@ -751,27 +771,14 @@ textarea.entrada-dados {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  transition: box-shadow 0.2s, transform 0.1s;
-
-  cursor: pointer;
-}
-
-.botao.login {
-  background: var(--cor-primaria);
-  color: white;
-  margin-bottom: 5px;
-  font-family: Poppins;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition: box-shadow 0.2s, transform 0.1s;
-  box-shadow: white;
+  transition:
+    box-shadow 0.2s,
+    transform 0.1s;
   cursor: pointer;
 }
 
 .botao.principal:hover {
-  box-shadow: 0 5px 5px #A9A9A9;
+  box-shadow: 0 5px 5px #a9a9a9;
 }
 
 .botao.secundario {
@@ -783,18 +790,19 @@ textarea.entrada-dados {
   margin-bottom: 5px;
   justify-content: center;
   gap: 8px;
-  transition: box-shadow 0.2s, transform 0.1s;
+  transition:
+    box-shadow 0.2s,
+    transform 0.1s;
   cursor: pointer;
 }
 
 .botao.secundario:hover {
-  box-shadow: 0 5px 5px #A9A9A9;
+  box-shadow: 0 5px 5px #a9a9a9;
 }
-
 
 .botao.texto {
   background: transparent #878788;
-  color: #79747e;
+  color: #black;
   font-family: Poppins;
 
   display: flex;
@@ -802,59 +810,52 @@ textarea.entrada-dados {
   justify-content: center;
   gap: 8px;
 
-  transition: box-shadow 0.2s, transform 0.1s;
+  transition:
+    box-shadow 0.2s,
+    transform 0.1s;
   cursor: pointer;
 }
 
 .botao.texto:hover {
-<<<<<<< Updated upstream
   box-shadow: 0 5px 5px #A9A9A9;
-=======
-  box-shadow: 0 5px 5px #a9a9a9;
-
 }
 
 .botao.login {
   color: white;
   background:  coral;
   font-family: 'poppins';
->>>>>>> Stashed changes
+  box-shadow: 0 5px 5px #a9a9a9;
 }
 
 #details-description {
-  border: 1px solid transparent;
-  padding-top: 10px;
-  font-family: var(--fonte-titulo);
-  transition: 0.2s;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  border: none;
 }
 
 #details-description:hover {
   border: 1px solid rgb(0, 0, 0);
 }
 
-#sumario {
-  padding-bottom: 10px;
-  list-style: none;
-  cursor: pointer;
-  display: block;
-  text-align: center;
-
-}
-
-#sumario::-webkit-details-marker {
-  display: none;
-}
-
 .acoes-botoes {
   display: flex;
   justify-content: center;
   flex-direction: column;
-
-
-
-<<<<<<< Updated upstream
 }
-=======
+
+#seta-nome,
+.seta-ordenacao {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 12px;
+  transition: transform 0.28s ease-in-out, opacity 0.28s ease-in-out;
+}
+
+.seta-desc {
+  transform: rotate(180deg);
+}
+
 .btn-ordenar {
   background: none;
   border: none;
@@ -866,4 +867,3 @@ textarea.entrada-dados {
   align-items: center;
   gap: 6px;
 }
->>>>>>> Stashed changes
