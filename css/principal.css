@@ -19,7 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   gap:
-  12px;
+    12px;
 }
 
 .div-item {
@@ -151,8 +151,7 @@ body {
 
   display: flex;
   flex-direction: column;
-
-  box-shadow: 12px 0 30px rgba(0,0,0,0.18);
+  box-shadow: 4px 0 16px rgba(0,0,0,0.15);
 
   padding: 20px 0;
   border-top-right-radius: 18px;
@@ -413,7 +412,7 @@ input::placeholder {
   padding: 0 16px;
   background-color: #e8e8e8;
   font-family: Poppins;
-  padding: 14px ;
+  padding: 14px 16px;
   color: #7a2800;
 }
 
@@ -619,17 +618,20 @@ input::placeholder {
   font-size: 1.5rem;
   margin-bottom: 24px;
 }
+
 .row {
   display: flex;
   flex-direction: row;
   gap: 5px;
 }
+
 .lembrarMe {
   display: flex;
   align-items: center;
   gap: 5px;
   color: white;
 }
+
 .opcao {
   top: 64px;
   margin: 0.2rem;
@@ -815,6 +817,13 @@ textarea.entrada-dados {
 }
 
 .botao.texto:hover {
+  box-shadow: 0 5px 5px #A9A9A9;
+}
+
+.botao.login {
+  color: white;
+  background:  coral;
+  font-family: 'poppins';
   box-shadow: 0 5px 5px #a9a9a9;
 }
 

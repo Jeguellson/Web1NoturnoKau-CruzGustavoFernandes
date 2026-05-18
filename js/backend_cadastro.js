@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   document.addEventListener("keydown", function (event) {
-    const inputNome = document.getElementById("inputNome");
-    const inputSenha = document.getElementById("inputSenha");
+    const inputNome = document.getElementById("textfield-inputUsuario");
+    const inputSenha = document.getElementById("textfield-input");
 
     if (!inputNome || !inputSenha) return;
 
@@ -52,17 +52,40 @@ function sair() {
 }
 
 function cadastrar(nome, senha) {
-  if (nome === "" || senha === "") {
-    alert("Preencha os campos meu rei!");
-    return;
+  
+  const containerUsuario = document.getElementById("textfield-containerUsuario");
+  const containerSenha = document.getElementById("textfield-containerSenha");
+  error = false;
+  if (nome.trim() === "") {
+    containerUsuario.classList.add('is-invalid');
+    containerUsuario.classList.remove('is-valid');
+    error = true;
+
+  } else {
+    containerUsuario.classList.remove('is-invalid');
+    containerUsuario.classList.add('is-valid');
   }
+
+  if (senha === "") {
+    containerSenha.classList.add('is-invalid');
+    containerSenha.classList.remove('is-valid');
+    error = true;
+
+  } else {
+    containerSenha.classList.remove('is-invalid');
+    containerSenha.classList.add('is-valid');
+
+  }
+
 
   if (document.getElementById("lembrarMe").checked) {
     localStorage.setItem("lembrarMe", "true");
   } else {
     localStorage.removeItem("lembrarMe");
   }
-
+  if (error) {
+    return;
+  }
   cookies();
   salvarDados(nome);
   alert("Você logou com sucesso!");
