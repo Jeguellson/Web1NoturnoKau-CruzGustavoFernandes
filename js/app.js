@@ -11,7 +11,7 @@ function updateSlider() {
 
   cards.forEach((card, index) => {
     card.classList.remove("active", "side");
-    
+
     arrowLeft.style.display = currentSlide === 0 ? "none" : "flex";
 
     if (currentSlide == cards.length - 1) {
@@ -34,6 +34,25 @@ function sliderScrollRight() {
     updateSlider();
   }
 }
+
+
+function irParaCard(id) {
+  console.log("irParaCard chamado com id:", id);
+  console.log("total de cards:", cards.length);
+
+  for (var i = 0; i < cards.length; i++) {
+    console.log("card", i, "data-id:", cards[i].getAttribute("data-id"));
+    if (cards[i].getAttribute("data-id") === id) {
+      console.log("encontrou no índice", i);
+      currentSlide = i;
+      updateSlider();
+      document.querySelector(".adopt-description").scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+  }
+  console.log("não encontrou nenhum card com id:", id);
+}
+
 
 function sliderScrollLeft() {
   if (currentSlide > 0) {

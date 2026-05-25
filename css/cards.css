@@ -19,13 +19,10 @@
   filter: blur(3px);
 }
 
-
-
 .description-img {
   width: 100%;
   height: 300px;
-
-  border-radius: 12px;
+border-radius: 12px 12px 0 0;
   object-fit: cover;
   display: block;
 }
@@ -33,20 +30,9 @@
 .description-tittle {
   font-size: 28px;
   font-family: "Poppins", sans-serif;
-  color: #000;
+  color: #7a2800;
   text-align: left;
-
-  margin: 0;
-}
-
-.description-description-short {
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
-  line-height: 1.2;
-
-  padding: 10px;
-  color: #333;
-
+  padding: 12px 15px 0px 15px;
   margin: 0;
 }
 
@@ -56,35 +42,29 @@
   font-weight: 400;
   color: #555;
   line-height: 1.5;
+  padding: 0px 5px 5px 15px;
   margin: 0;
-  padding-top: 2px;
 }
 
-#description-cards p {
-  color: rgb(0, 0, 0);
-  display: start;
-
-  font-weight: 200;
-
-  margin: 0;
-  padding: 0;
-  padding-right: 5px;
-  padding-bottom: 5px;
+.description-short {
+  padding: 0px 5px 16px 15px !important;
+  font-weight: 500 !important;
+  color: black;
+  font-family: Poppins !important;
 }
 
 .description-cards {
   flex: 0 0 85%;
   min-width: 85%;
-
   border-radius: 12px;
   background: white;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-
   transition: all 0.4s ease;
-
   transform: scale(0.9);
   opacity: 0.4;
   filter: blur(2px);
+  padding: 0;
+  overflow: hidden;
 }
 
 .card-field {
@@ -107,23 +87,16 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-
   width: 45px;
   height: 45px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 24px;
   cursor: pointer;
-
   background-color: #ff7f50;
-
   border-radius: 50%;
-
   color: white;
-
   transition:
     transform 0.2s ease,
     background-color 0.2s ease;

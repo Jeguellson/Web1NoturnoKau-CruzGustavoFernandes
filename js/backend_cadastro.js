@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   if (sessionStorage.getItem("status") === "true") {
-    const nome = sessionStorage.getItem("usuario");
+    var nome = sessionStorage.getItem("usuario");
 
     if (document.getElementById("statusLabel"))
       document.getElementById("statusLabel").textContent = "Ativo";
@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   document.addEventListener("keydown", function (event) {
-    const inputNome = document.getElementById("textfield-inputUsuario");
-    const inputSenha = document.getElementById("textfield-input");
+    var inputNome = document.getElementById("textfield-inputUsuario");
+    var inputSenha = document.getElementById("textfield-input");
 
     if (!inputNome || !inputSenha) return;
 
@@ -31,6 +31,16 @@ document.addEventListener("DOMContentLoaded", function () {
       sair();
     }
   });
+
+  var detalhes = document.getElementById("details-description");
+  var summary = document.getElementById("sumario");
+
+  if (detalhes && summary) {
+    var textoOriginal = summary.textContent;
+    detalhes.addEventListener("toggle", function () {
+      summary.textContent = this.open ? "Fechar informações" : textoOriginal;
+    });
+  }
 });
 
 function salvarDados(nome) {
@@ -52,53 +62,41 @@ function sair() {
 }
 
 function cadastrar(nome, senha) {
-  
-  const containerUsuario = document.getElementById("textfield-containerUsuario");
-  const containerSenha = document.getElementById("textfield-containerSenha");
-  error = false;
-  if (nome.trim() === "") {
-    containerUsuario.classList.add('is-invalid');
-    containerUsuario.classList.remove('is-valid');
-    error = true;
+  var containerUsuario = document.getElementById("textfield-containerUsuario");
+  var containerSenha = document.getElementById("textfield-containerSenha");
 
+  if (!containerUsuario || !containerSenha) return;
+
+  var error = false;
+
+  if (nome.trim() === "") {
+    containerUsuario.classList.add("is-invalid");
+    containerUsuario.classList.remove("is-valid");
+    error = true;
   } else {
-    containerUsuario.classList.remove('is-invalid');
-    containerUsuario.classList.add('is-valid');
+    containerUsuario.classList.remove("is-invalid");
+    containerUsuario.classList.add("is-valid");
   }
 
   if (senha === "") {
-    containerSenha.classList.add('is-invalid');
-    containerSenha.classList.remove('is-valid');
+    containerSenha.classList.add("is-invalid");
+    containerSenha.classList.remove("is-valid");
     error = true;
-
   } else {
-    containerSenha.classList.remove('is-invalid');
-    containerSenha.classList.add('is-valid');
-
+    containerSenha.classList.remove("is-invalid");
+    containerSenha.classList.add("is-valid");
   }
 
-
-  if (document.getElementById("lembrarMe").checked) {
+  if (document.getElementById("lembrarMe") && document.getElementById("lembrarMe").checked) {
     localStorage.setItem("lembrarMe", "true");
   } else {
     localStorage.removeItem("lembrarMe");
   }
-  if (error) {
-    return;
-  }
+
+  if (error) return;
+
   cookies();
   salvarDados(nome);
   alert("Você logou com sucesso!");
   window.location.href = "TelaPrincipal.html";
 }
-
-const detalhes = document.getElementById("details-description");
-const summary = document.getElementById("sumario");
-
-const textoOriginal = summary.textContent;
-
-detalhes.addEventListener("toggle", function () {
-  summary.textContent = this.open
-    ? "Fechar informações"
-    : textoOriginal;
-});
