@@ -1,5 +1,5 @@
 let gatos = JSON.parse(localStorage.getItem("gatos")) || [];
-
+const legendaSexo = document.querySelector('.legenda-sexo');
 let indiceEditando = -1;
 let ordemNomeAsc = true;
 const OPCOES_RPP = [5, 10, 25];
@@ -88,12 +88,12 @@ function renderizarTabela() {
 
   tabela.innerHTML =
     "<tr>" +
-      "<th class='col-selecao'><input type='checkbox' id='selecionar-todos' aria-label='Selecionar todos os gatos'></th>" +
-      "<th id='th-nome'><button type='button' class='btn-ordenar' onclick='ordenarPorNome()'>Nome <span class='seta-ordenacao'>" + setaAtual + "</span></button></th>" +
-      "<th>Raça</th>" +
-      "<th>Sexo</th>" +
-      "<th>Idade</th>" +
-      "<th>Ações</th>" +
+    "<th class='col-selecao'><input type='checkbox' id='selecionar-todos' aria-label='Selecionar todos os gatos'></th>" +
+    "<th id='th-nome'><button type='button' class='btn-ordenar' onclick='ordenarPorNome()'>Nome <span class='seta-ordenacao'>" + setaAtual + "</span></button></th>" +
+    "<th>Raça</th>" +
+    "<th>Sexo</th>" +
+    "<th>Idade</th>" +
+    "<th>Ações</th>" +
     "</tr>";
 
   var gatosSalvos = JSON.parse(localStorage.getItem("gatos")) || [];
@@ -114,8 +114,8 @@ function renderizarTabela() {
       "<td>" + gato.sexo + "</td>" +
       "<td>" + gato.idade + "</td>" +
       "<td>" +
-        "<button class='btn-alterar' onclick='alterarGato(" + i + ")'>Alterar</button>" +
-        "<button class='btn-excluir' onclick='excluirGato(" + i + ")'>Excluir</button>" +
+      "<button class='btn-alterar' onclick='alterarGato(" + i + ")'>Alterar</button>" +
+      "<button class='btn-excluir' onclick='excluirGato(" + i + ")'>Excluir</button>" +
       "</td>";
     tabela.appendChild(linha);
   }
@@ -155,16 +155,16 @@ function renderizarPaginacao(total) {
 
   rodape.innerHTML =
     "<div class='pag-footer'>" +
-      "<button class='btn-excluirSelecionados' id='botao-excluir-selecionados' onclick='excluirSelecionados()' disabled>Excluir selecionados</button>" +
-      "<div class='pag-rpp'>" +
-        "<span>Linhas por página:</span>" +
-        "<select id='pag-select' class='pag-select'>" + opcoesHTML + "</select>" +
-      "</div>" +
-      "<span class='pag-range'>" + (inicio + 1) + "–" + fim + " de " + total + "</span>" +
-      "<div class='pag-seta'>" +
-        "<button class='pag-botao' id='botao-anterior' aria-label='Página anterior'>&#8249;</button>" +
-        "<button class='pag-botao' id='botao-proximo' aria-label='Próxima página'>&#8250;</button>" +
-      "</div>" +
+    "<button class='btn-excluirSelecionados' id='botao-excluir-selecionados' onclick='excluirSelecionados()' disabled>Excluir selecionados</button>" +
+    "<div class='pag-rpp'>" +
+    "<span>Linhas por página:</span>" +
+    "<select id='pag-select' class='pag-select'>" + opcoesHTML + "</select>" +
+    "</div>" +
+    "<span class='pag-range'>" + (inicio + 1) + "–" + fim + " de " + total + "</span>" +
+    "<div class='pag-seta'>" +
+    "<button class='pag-botao' id='botao-anterior' aria-label='Página anterior'>&#8249;</button>" +
+    "<button class='pag-botao' id='botao-proximo' aria-label='Próxima página'>&#8250;</button>" +
+    "</div>" +
     "</div>";
 
   var botaoAnterior = document.getElementById("botao-anterior");
@@ -313,7 +313,79 @@ function ordenarPorNome() {
 
 
 
+document.querySelector('.formGato').addEventListener('submit', function (e) {
+  e.preventDefault();
+  let valido = true;
 
+
+  const campos = [
+    {
+      id: 'nome_gato',
+      validar: (val) => {
+        if (!val) return 'Nome é obrigatório';
+        if (val.length < 2) return 'Nome muito curto';
+        return null; // null = válido
+      }
+    },
+    {
+      id: 'raca_gato',
+      validar: (val) => {
+        if (!val) return 'Raça é obrigatória';
+        return null; // null = válido
+      }
+    },
+    {
+      id: 'idadeGato',
+      validar: (val) => {
+        if (!Number.isInteger(Number(val)) || val < 0 || val > 30) return 'Idade inválida';
+        if (!val) return 'Idade é obrigatória';
+
+        return null;
+      }
+    },
+  ];
+
+  campos.forEach(({ id, validar }) => {
+    const input = document.getElementById(id);
+    const campo = input.closest('.campo-texto');
+    const msgErro = campo.parentElement.querySelector('.msg-erro');
+
+    const erro = validar(input.value.trim());
+
+    if (erro) {
+      campo.classList.add('erro');
+      if (msgErro) msgErro.textContent = erro;
+      if (msgErro) msgErro.style.display = 'block';
+      valido = false;
+    } else {
+      campo.classList.remove('erro');
+      if (msgErro) msgErro.style.display = 'none';
+    }
+  });
+
+  console.log(legendaSexo);
+
+  if (!document.querySelector('input[name="sexo"]:checked')) {
+    legendaSexo.classList.add('erro');    
+    valido = false;
+  } else {
+    legendaSexo.classList.remove('erro'); 
+  }
+
+  if (valido) {
+    const logado = sessionStorage.getItem("status") === "true";
+    const msgNaoLogado = document.getElementById("msg-nao-logado");
+
+    if (!logado) {
+      if (msgNaoLogado) msgNaoLogado.classList.add("visivel");
+      alert("Precisa estar logado para cadastrar um gato!");
+      return;
+    }
+
+    msgNaoLogado.classList.remove("visivel");
+    cadastrar_Gato(e);
+  }
+});
 
 
 
@@ -325,9 +397,6 @@ function cadastrar_Gato(event) {
   var sexoSelecionado = document.querySelector('input[name="sexo"]:checked');
   var idade = document.getElementById("idadeGato").value;
 
-  if (nome === "") { alert("Insira o nome do gato!"); return; }
-  if (raca === "") { alert("Insira a raça do gato!"); return; }
-  if (!sexoSelecionado) { alert("Selecione o sexo do gato!"); return; }
 
   var gato = { nome: nome, raca: raca, sexo: sexoSelecionado.value, idade: idade };
 
@@ -341,13 +410,17 @@ function cadastrar_Gato(event) {
   localStorage.setItem("gatos", JSON.stringify(gatos));
   renderizarTabela();
   alert("Gato cadastrado com sucesso!");
+
+
+
 }
+
 
 document.addEventListener("DOMContentLoaded", function () {
   renderizarTabela();
 });
 
-document.querySelector(".formGato").addEventListener("submit", cadastrar_Gato);
+//document.querySelector(".formGato").addEventListener("submit", cadastrar_Gato);
 
 document.addEventListener("DOMContentLoaded", function () {
   var listar = document.getElementById("listar");
