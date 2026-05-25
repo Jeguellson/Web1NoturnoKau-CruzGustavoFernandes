@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff78821e-af9a-4b24-b6bd-bb81dcc24e61" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/HTML/TelaPrincipal.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/TelaPrincipal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/TelaLogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/TelaLogin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/cards.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/cards.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/principal.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/principal.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Controle.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Controle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/textField.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/textField.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/backend_cadastro.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend_cadastro.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +43,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Kaua",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/ikaua/Downloads/Trabalho 2"
   }

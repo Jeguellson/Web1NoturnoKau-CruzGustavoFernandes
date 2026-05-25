@@ -18,8 +18,8 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  gap:
-    12px;
+  gap: 12px;
+  width: 100%;
 }
 
 .div-item {
@@ -343,10 +343,6 @@ input::placeholder {
   align-items: center;
 }
 
-.status-login {
-  font-family: Poppins;
-  text-transform: uppercase;
-}
 
 #lista-gatos {
   width: 100%;
@@ -484,21 +480,14 @@ input::placeholder {
 
 .login-nav h2 {
   color: white;
-  font-family: Bungee;
+  font-family: Poppins;
   text-align: center;
 }
 
 .loginInfo {
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-#inputNome,
-#inputSenha,
-#login {
-  width: 300px;
-  height: 30px;
+  align-items: stretch;
 }
 
 .opcoes {
@@ -507,47 +496,16 @@ input::placeholder {
 }
 
 .corpoCadastro {
-  background-color: coral;
+  background-color: white;
   position: relative;
-
-  width: 400px;
+  width: 320px;
   min-height: 150px;
-
   border-radius: 35px;
   margin: 0 auto;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   padding: 20px;
-}
-
-.catbox {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-}
-
-.cat-face {
-  background-color: #000;
-  color: white;
-
-  width: 100%;
-  min-height: 120px;
-
-  padding: 20px;
-  border-radius: 25px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .orelha-direita,
@@ -573,21 +531,19 @@ input::placeholder {
   transform: rotate(92.5deg);
 }
 
+.body-cadastro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E0E0E0;
+}
+
 .bg-patinhas {
+  background: #E0E0E0;
   position: fixed;
   inset: 0;
   z-index: -1;
   opacity: 0.15;
-
-  background-image:
-    url("../img/patinhas-background.png"), url("../img/patinhas-background.png");
-
-  background-position:
-    -1 1,
-    30px 30px;
-  background-size: 160px 160px;
-  background-repeat: repeat;
-
   background-color: white;
 }
 
@@ -620,14 +576,17 @@ input::placeholder {
 .row {
   display: flex;
   flex-direction: row;
-  gap: 5px;
+  justify-content: space-between;
+  width: 100%;
+  font-family: Poppins;
+  font-size: 14px;
 }
 
 .lembrarMe {
   display: flex;
   align-items: center;
   gap: 5px;
-  color: white;
+  color: black;
 }
 
 .opcao {
@@ -636,7 +595,7 @@ input::placeholder {
 }
 
 .bloco-campo {
-  margin-bottom: 20px;
+
   width: 100%;
 }
 
@@ -647,6 +606,7 @@ input::placeholder {
   border-radius: 4px;
   background-color: white;
   transition: border 0.2s;
+  font-size: 14px;
 }
 
 .campo-texto.login {
@@ -656,7 +616,6 @@ input::placeholder {
   border-radius: 4px;
   background-color: white;
   transition: border 0.2s;
-
 }
 
 .campo-texto:focus-within {
@@ -735,12 +694,12 @@ textarea.entrada-dados {
   font-family: Poppins;
   margin: 8px 0;
   font-weight: 400px;
-  margin-top: -5px;
+  margin-top: 20px;
 }
 
 .grupo-sexo {
   display: flex;
-  gap: 20px;
+  gap: 65px;
   margin-bottom: 16px;
   align-items: center;
   font-family: Poppins;
@@ -762,6 +721,7 @@ textarea.entrada-dados {
   align-content: center;
   flex-direction: column;
   width: 100%;
+  margin-top: 5px;
 }
 
 .botao.principal {
@@ -949,4 +909,48 @@ textarea.entrada-dados {
 
 input[type="checkbox"] {
   accent-color: #7a2800;
+}
+
+#bem-vindo {
+  font-family: Poppins;
+  color: black;
+  font-size: 26px;
+  padding: 5px 0px 0px 0px;
+}
+
+#login {
+  font-family: Poppins;
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 30px;
+  padding: 5px 0px 0px 10px;
+  font-weight: 400;
+}
+
+#copyright {
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.login-divisor {
+  width: 100%;
+  height: 1px;
+  margin: 10px 0;
+  background: linear-gradient(to right, #e0e0e0, #7a2800, #e0e0e0);
+}
+
+#textColorido {
+  color: #7a2800;
+}
+
+#semConta {
+  display: flex;
+  font-size: 12px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.status-login {
+  font-family: Poppins;
 }
