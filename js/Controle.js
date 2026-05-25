@@ -366,27 +366,42 @@ document.querySelector('.formGato').addEventListener('submit', function (e) {
   console.log(legendaSexo);
 
   if (!document.querySelector('input[name="sexo"]:checked')) {
-    legendaSexo.classList.add('erro');    
+    legendaSexo.classList.add('erro');
     valido = false;
   } else {
-    legendaSexo.classList.remove('erro'); 
+    legendaSexo.classList.remove('erro');
   }
 
   if (valido) {
     const logado = sessionStorage.getItem("status") === "true";
-    const msgNaoLogado = document.getElementById("msg-nao-logado");
 
     if (!logado) {
-      if (msgNaoLogado) msgNaoLogado.classList.add("visivel");
-      alert("Precisa estar logado para cadastrar um gato!");
+      mostrarToast("Precisa estar logado para cadastrar um gato!");
       return;
     }
 
-    msgNaoLogado.classList.remove("visivel");
     cadastrar_Gato(e);
   }
 });
+function mostrarToast(mensagem, acao = null, duracaoMs = 3000) {
+  const toast = document.getElementById("toast");
+  const texto = document.getElementById("toast-mensagem");
+  const botaoAcao = document.getElementById("toast-acao");
 
+  texto.textContent = mensagem;
+
+  // botão de ação opcional
+  if (acao) {
+    botaoAcao.style.display = "block";
+    botaoAcao.textContent = acao.label;
+    botaoAcao.onclick = acao.callback;
+  } else {
+    botaoAcao.style.display = "none";
+  }
+
+  toast.classList.add("visivel");
+  setTimeout(() => toast.classList.remove("visivel"), duracaoMs);
+}
 
 
 function cadastrar_Gato(event) {
@@ -409,7 +424,7 @@ function cadastrar_Gato(event) {
 
   localStorage.setItem("gatos", JSON.stringify(gatos));
   renderizarTabela();
-  alert("Gato cadastrado com sucesso!");
+  mostrarToast("Gato cadastrado com sucesso!");
 
 
 
